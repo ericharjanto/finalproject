@@ -1,0 +1,3872 @@
+[
+    {
+        "id": "e6fb18970dbe710a",
+        "type": "tab",
+        "label": "IOT2050",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "5842d9efa2d6aeb2",
+        "type": "modbus-client",
+        "name": "Inverter",
+        "clienttype": "serial",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "tcpHost": "127.0.0.1",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB0",
+        "serialType": "RTU",
+        "serialBaudrate": "19200",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "even",
+        "serialConnectionDelay": "100",
+        "unit_id": 1,
+        "commandDelay": 1,
+        "clientTimeout": 10000,
+        "reconnectOnTimeout": true,
+        "reconnectTimeout": 1000,
+        "parallelUnitIdsAllowed": true
+    },
+    {
+        "id": "8f68ce2609b0d4ea",
+        "type": "s7 endpoint",
+        "transport": "iso-on-tcp",
+        "address": "192.168.0.201",
+        "port": "102",
+        "rack": "0",
+        "slot": "1",
+        "localtsaphi": "01",
+        "localtsaplo": "00",
+        "remotetsaphi": "01",
+        "remotetsaplo": "00",
+        "connmode": "rack-slot",
+        "adapter": "",
+        "busaddr": "2",
+        "cycletime": "100",
+        "timeout": "2000",
+        "name": "PLC S7-1200 Sorting System",
+        "vartable": [
+            {
+                "addr": "DB4,I4",
+                "name": "Output Velocity"
+            },
+            {
+                "addr": "DB4,R6",
+                "name": "Motor Frequency"
+            },
+            {
+                "addr": "DB4,R10",
+                "name": "Motor Current"
+            },
+            {
+                "addr": "DB4,I14",
+                "name": "Voltage"
+            },
+            {
+                "addr": "DB4,R16",
+                "name": "Total Operating Time"
+            },
+            {
+                "addr": "DB4,I20",
+                "name": "Overload Fault Duration"
+            },
+            {
+                "addr": "DB4,I22",
+                "name": "Speed"
+            },
+            {
+                "addr": "DB4,I24",
+                "name": "Acceleration Time"
+            },
+            {
+                "addr": "DB4,I26",
+                "name": "Deceleration Time"
+            },
+            {
+                "addr": "M5.0",
+                "name": "Indicator Run"
+            },
+            {
+                "addr": "M0.1",
+                "name": "Stop"
+            },
+            {
+                "addr": "Q0.1",
+                "name": "Indicator Reset"
+            },
+            {
+                "addr": "I0.3",
+                "name": "Emergency Switch"
+            },
+            {
+                "addr": "M0.4",
+                "name": "Status Inverter"
+            },
+            {
+                "addr": "M0.5",
+                "name": "PS Detect"
+            },
+            {
+                "addr": "DB3,DI2",
+                "name": "Total Good Product"
+            },
+            {
+                "addr": "DB3,DI6",
+                "name": "Total Reject Product"
+            },
+            {
+                "addr": "DB3,DI10",
+                "name": "Total Sorting"
+            },
+            {
+                "addr": "DB3,DI14",
+                "name": "Current Good Product"
+            },
+            {
+                "addr": "DB3,DI18",
+                "name": "Current Reject Product"
+            },
+            {
+                "addr": "DB3,DI22",
+                "name": "Current Sorting"
+            },
+            {
+                "addr": "DB3,I28",
+                "name": "% Total Good Product"
+            },
+            {
+                "addr": "DB3,I30",
+                "name": "% Total Reject Product"
+            },
+            {
+                "addr": "DB3,I32",
+                "name": "% Current Good Product"
+            },
+            {
+                "addr": "DB3,I34",
+                "name": "% Current Reject Product"
+            },
+            {
+                "addr": "DB3,I46",
+                "name": "Total Queue"
+            },
+            {
+                "addr": "M6.6",
+                "name": "Status Reject Product"
+            },
+            {
+                "addr": "M10.0",
+                "name": "Sensor Pusher RTC"
+            },
+            {
+                "addr": "M10.1",
+                "name": "Sensor Pusher ADV"
+            },
+            {
+                "addr": "M10.5",
+                "name": "Mode"
+            },
+            {
+                "addr": "M0.6",
+                "name": "PS Get Result"
+            },
+            {
+                "addr": "M6.4",
+                "name": "Status Good Product"
+            },
+            {
+                "addr": "DB3,I40",
+                "name": "Buffer 1"
+            },
+            {
+                "addr": "DB3,I42",
+                "name": "Buffer 2"
+            },
+            {
+                "addr": "DB3,I44",
+                "name": "Buffer 3"
+            },
+            {
+                "addr": "M0.7",
+                "name": "PS Trigger"
+            },
+            {
+                "addr": "DB3,I50",
+                "name": "Alarm PS Trigger"
+            },
+            {
+                "addr": "DB4,I28",
+                "name": "Alarm Speed Shutdown"
+            },
+            {
+                "addr": "DB3,I52",
+                "name": "Target Sorting"
+            }
+        ]
+    },
+    {
+        "id": "4ac74db70864d4c7",
+        "type": "ui_tab",
+        "name": "Inverter",
+        "icon": "fa-line-chart",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "245a9acaee0dbd55",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Tissue Packaging Sorting",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "e83bb7a6d8b751ed",
+        "type": "ui_group",
+        "name": "Motor Current",
+        "tab": "4ac74db70864d4c7",
+        "order": 4,
+        "disp": true,
+        "width": "8",
+        "collapse": false
+    },
+    {
+        "id": "fbd9bb2f6bf2ab21",
+        "type": "ui_group",
+        "name": "Indicator",
+        "tab": "49aad6883befec53",
+        "order": 1,
+        "disp": true,
+        "width": 17,
+        "collapse": false
+    },
+    {
+        "id": "bd3a19e870a0651a",
+        "type": "ui_group",
+        "name": "Voltage",
+        "tab": "4ac74db70864d4c7",
+        "order": 1,
+        "disp": true,
+        "width": "8",
+        "collapse": false
+    },
+    {
+        "id": "49aad6883befec53",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "fa-home",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "5b56ebfa824c4e79",
+        "type": "ui_group",
+        "name": "Sorting",
+        "tab": "49aad6883befec53",
+        "order": 2,
+        "disp": true,
+        "width": 10,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a8c239e6e8183cc1",
+        "type": "ui_group",
+        "name": "Setpoint",
+        "tab": "4ac74db70864d4c7",
+        "order": 5,
+        "disp": true,
+        "width": "8",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "309fad6d487ab47f",
+        "type": "mqtt-broker",
+        "name": "MQTT Server on Digital Ocean",
+        "broker": "",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "5",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "status",
+        "birthQos": "0",
+        "birthPayload": "Connected",
+        "birthMsg": {},
+        "closeTopic": "status",
+        "closeQos": "0",
+        "closePayload": "Disconnected",
+        "closeMsg": {},
+        "willTopic": "status",
+        "willQos": "0",
+        "willPayload": "Unexpected Disconnection",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "ef2e144cc7b1b73e",
+        "type": "ui_tab",
+        "name": "Inverter Log",
+        "icon": "fa-database",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "392326a2a899d0f2",
+        "type": "ui_group",
+        "name": "Inverter Data Log",
+        "tab": "ef2e144cc7b1b73e",
+        "order": 1,
+        "disp": true,
+        "width": "27",
+        "collapse": false
+    },
+    {
+        "id": "5be9579b85d36a31",
+        "type": "postgreSQLConfig",
+        "name": "",
+        "host": "",
+        "hostFieldType": "str",
+        "port": "5432",
+        "portFieldType": "num",
+        "database": "data_log",
+        "databaseFieldType": "str",
+        "ssl": "false",
+        "sslFieldType": "bool",
+        "applicationName": "",
+        "applicationNameType": "str",
+        "max": "10",
+        "maxFieldType": "num",
+        "idle": "1000",
+        "idleFieldType": "num",
+        "connectionTimeout": "10000",
+        "connectionTimeoutFieldType": "num",
+        "user": "",
+        "userFieldType": "str",
+        "password": "",
+        "passwordFieldType": "str"
+    },
+    {
+        "id": "48fdaa15c8cb63b9",
+        "type": "ui_tab",
+        "name": "PLC Log",
+        "icon": "fa-database",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "14044d4f3ceb064a",
+        "type": "ui_group",
+        "name": "PLC Status Log",
+        "tab": "48fdaa15c8cb63b9",
+        "order": 1,
+        "disp": true,
+        "width": "27",
+        "collapse": false
+    },
+    {
+        "id": "a22b2daacc2f7b15",
+        "type": "ui_tab",
+        "name": "Alarm Log",
+        "icon": "fa-database",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "bbe3904282b647f5",
+        "type": "ui_group",
+        "name": "Sorting Result",
+        "tab": "1705087004cc4753",
+        "order": 1,
+        "disp": true,
+        "width": "27",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "3873457bf1ee6a68",
+        "type": "ui_group",
+        "name": "Output Velocity",
+        "tab": "4ac74db70864d4c7",
+        "order": 2,
+        "disp": true,
+        "width": "8",
+        "collapse": false
+    },
+    {
+        "id": "4c63576068bc634c",
+        "type": "ui_group",
+        "name": "Motor Frequency",
+        "tab": "4ac74db70864d4c7",
+        "order": 3,
+        "disp": true,
+        "width": "8",
+        "collapse": false
+    },
+    {
+        "id": "1705087004cc4753",
+        "type": "ui_tab",
+        "name": "Sorting Result",
+        "icon": "fa-database",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "dd3b0888607c2154",
+        "type": "ui_group",
+        "name": "Status",
+        "tab": "4ac74db70864d4c7",
+        "order": 6,
+        "disp": true,
+        "width": "8",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1ff15fa6497d7654",
+        "type": "ui_group",
+        "name": "Alarm Log",
+        "tab": "a22b2daacc2f7b15",
+        "order": 1,
+        "disp": true,
+        "width": "27",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "27a562c3e46aa3f3",
+        "type": "inject",
+        "z": "e6fb18970dbe710a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "0.5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 60,
+        "wires": [
+            [
+                "c0c389febe1f66ad"
+            ]
+        ]
+    },
+    {
+        "id": "562dfd1beebbb8d4",
+        "type": "modbus-flex-getter",
+        "z": "e6fb18970dbe710a",
+        "name": "Read from Inverter",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "logIOActivities": false,
+        "server": "5842d9efa2d6aeb2",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "x": 510,
+        "y": 60,
+        "wires": [
+            [
+                "2262a37e9cf80be2",
+                "c2833770ccae2d63",
+                "cb62922a0d206693",
+                "8798c71aabaa5f40",
+                "84bc5eab28a93051"
+            ],
+            [
+                "fbbd38f5301655e0",
+                "304af18c861d85fb",
+                "b252c91c61628cc7",
+                "693d65455ed0c11e",
+                "2c7711c4cbfb19fb",
+                "a1b0e369fbaec0c8"
+            ]
+        ]
+    },
+    {
+        "id": "c0c389febe1f66ad",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Modbus Address",
+        "func": "msg.topic = 'output_velocity'\nmsg.payload = {\n    'fc' : 3,\n    'unitid' : 1,\n    'address' : 8604,\n    'quantity' : 1\n}\nnode.send(msg)\n\nmsg.topic = 'motor_frequency'\nmsg.payload = {\n    'fc' : 3,\n    'unitid' : 1,\n    'address' : 3202,\n    'quantity' : 1\n}\nnode.send(msg)\n\nmsg.topic = 'motor_current'\nmsg.payload = {\n    'fc' : 3,\n    'unitid' : 1,\n    'address' : 3204,\n    'quantity' : 1\n}\nnode.send(msg)\n\nmsg.topic = 'voltage'\nmsg.payload = {\n    'fc' : 3,\n    'unitid' : 1,\n    'address' : 3207,\n    'quantity' : 1\n}\nnode.send(msg)\n\nmsg.topic = 'total_operating_time'\nmsg.payload = {\n    'fc' : 3,\n    'unitid' : 1,\n    'address' : 3233,\n    'quantity' : 1\n}\nnode.send(msg)\n\nmsg.topic = 'overload_fault_duration'\nmsg.payload = {\n    'fc' : 3,\n    'unitid' : 1,\n    'address' : 14423,\n    'quantity' : 1\n}\nnode.send(msg)\n\nmsg.topic = 'speed'\nmsg.payload = {\n    'fc' : 3,\n    'unitid' : 1,\n    'address' : 5281,\n    'quantity' : 1\n}\nnode.send(msg)\n\nmsg.topic = 'frequency'\nmsg.payload = {\n    'fc' : 3,\n    'unitid' : 1,\n    'address' : 8502,\n    'quantity' : 1\n}\nnode.send(msg)\n\nmsg.topic = 'acceleration_time'\nmsg.payload = {\n    'fc' : 3,\n    'unitid' : 1,\n    'address' : 9001,\n    'quantity' : 1\n}\nnode.send(msg)\n\nmsg.topic = 'deceleration_time'\nmsg.payload = {\n    'fc' : 3,\n    'unitid' : 1,\n    'address' : 9002,\n    'quantity' : 1\n}\nnode.send(msg)",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 60,
+        "wires": [
+            [
+                "562dfd1beebbb8d4"
+            ]
+        ]
+    },
+    {
+        "id": "2262a37e9cf80be2",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Output Velocity",
+        "func": "if(msg.topic == 'output_velocity'){\n    var data = msg.payload\n    var output_velocity = global.get('output_velocity')\n    \n    if(data != output_velocity){\n        msg.payload = data[0]\n        global.set('output_velocity', msg.payload)\n        node.send(msg)\n    }\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 60,
+        "wires": [
+            [
+                "fe737ed26c41d3dc",
+                "f97cee37a370f01d",
+                "117a663ac7483e46"
+            ]
+        ]
+    },
+    {
+        "id": "fe737ed26c41d3dc",
+        "type": "s7 out",
+        "z": "e6fb18970dbe710a",
+        "endpoint": "8f68ce2609b0d4ea",
+        "variable": "Output Velocity",
+        "name": "",
+        "x": 1020,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "c2833770ccae2d63",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Motor Frequency",
+        "func": "if(msg.topic == 'motor_frequency'){\n    var data = msg.payload\n    data = data[0]*0.1\n    data = data.toFixed(2)\n    data = parseFloat(data)\n    var motor_frequency = global.get('motor_frequency')\n    \n    if(data != motor_frequency){\n        msg.payload = data\n        global.set('motor_frequency', msg.payload)\n        node.send(msg)\n    }\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 140,
+        "wires": [
+            [
+                "0932b35683c704cf",
+                "477bc64a2efa0e3f",
+                "f099c0abea9c4cbe"
+            ]
+        ]
+    },
+    {
+        "id": "cb62922a0d206693",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Motor Current",
+        "func": "if(msg.topic == 'motor_current'){\n    var data = msg.payload\n    data = data[0]*0.1\n    data = data.toFixed(2)\n    data = parseFloat(data)\n    var motor_current = global.get('motor_current')\n    \n    if(data != motor_current){\n        msg.payload = data\n        global.set('motor_current', msg.payload)\n        node.send(msg)\n    }\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 220,
+        "wires": [
+            [
+                "4c92412ca80d168e",
+                "4f1a05a39a8fdc3a",
+                "37a531f17752806f"
+            ]
+        ]
+    },
+    {
+        "id": "8798c71aabaa5f40",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Voltage",
+        "func": "if(msg.topic == 'voltage'){\n    var data = msg.payload\n    var voltage = global.get('voltage')\n    \n    if(data[0] != voltage){\n        msg.payload = data[0]\n        global.set('voltage', msg.payload)\n        node.send(msg)\n    }\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 300,
+        "wires": [
+            [
+                "3c21d162f12ff536",
+                "8935e17aa9bf0a74",
+                "7a8bab5ba28953de"
+            ]
+        ]
+    },
+    {
+        "id": "84bc5eab28a93051",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Total Operating Time",
+        "func": "if(msg.topic == 'total_operating_time'){\n    var data = msg.payload\n    data = data[0]\n    data = data.toFixed(2)\n    msg.payload = parseFloat(data)\n    global.set('total_operating_time', msg.payload)\n    node.send(msg)\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 780,
+        "y": 360,
+        "wires": [
+            [
+                "1984dd42b8dc1fbb",
+                "9ce28b23f1eed5f9"
+            ]
+        ]
+    },
+    {
+        "id": "2c7711c4cbfb19fb",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Overload Fault Duration",
+        "func": "if(msg.topic == 'overload_fault_duration'){\n    var data = msg.payload\n    var buf = Buffer.from([data.buffer[0],data.buffer[1]])\n    var res = buf.readInt16BE()\n    msg.payload = res\n    global.set('overload_fault_duration', msg.payload)\n    node.send(msg)\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 420,
+        "wires": [
+            [
+                "603578c376dfed22",
+                "d1cffe80a347a09a"
+            ]
+        ]
+    },
+    {
+        "id": "fbbd38f5301655e0",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Speed",
+        "func": "if(msg.topic == 'speed'){\n    var data = msg.payload\n    var buf = Buffer.from([data.buffer[0],data.buffer[1]])\n    var res = buf.readInt16BE()\n    res = (res*3)/2\n    res = parseInt(res)\n    \n    var speed_setpoint = global.get('speed_setpoint')\n    \n    if(res <= (speed_setpoint + 1) && res >= (speed_setpoint - 1)){\n        global.set('speed', speed_setpoint)\n    }\n    else{\n        msg.payload = speed_setpoint\n        global.set('speed', msg.payload)\n        node.send(msg)\n    }\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 480,
+        "wires": [
+            [
+                "1cec313fb5eb63b0",
+                "4da7843053fd074b"
+            ]
+        ]
+    },
+    {
+        "id": "304af18c861d85fb",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Acceleration Time (Display)",
+        "func": "if(msg.topic == 'acceleration_time'){\n    var data = msg.payload\n    var buf = Buffer.from([data.buffer[0],data.buffer[1],data.buffer[2],data.buffer[3]])\n    var res = buf.readInt16BE()\n    res = res * 0.1\n    msg.payload = res.toFixed(2)\n    global.set('acceleration_time', msg.payload)\n    node.send(msg)\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 660,
+        "wires": [
+            [
+                "f4314034a6e5f6d9"
+            ]
+        ]
+    },
+    {
+        "id": "a1b0e369fbaec0c8",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Deceleration Time (Display)",
+        "func": "if(msg.topic == 'deceleration_time'){\n    var data = msg.payload\n    var buf = Buffer.from([data.buffer[0],data.buffer[1]])\n    var res = buf.readInt16BE()\n    res = res * 0.1\n    msg.payload = res.toFixed(2)\n    global.set('deceleration_time', msg.payload)\n    global.set('send', true)\n    node.send(msg)\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 700,
+        "wires": [
+            [
+                "6b1c93209bd92419"
+            ]
+        ]
+    },
+    {
+        "id": "0932b35683c704cf",
+        "type": "s7 out",
+        "z": "e6fb18970dbe710a",
+        "endpoint": "8f68ce2609b0d4ea",
+        "variable": "Motor Frequency",
+        "name": "",
+        "x": 1030,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "4c92412ca80d168e",
+        "type": "s7 out",
+        "z": "e6fb18970dbe710a",
+        "endpoint": "8f68ce2609b0d4ea",
+        "variable": "Motor Current",
+        "name": "",
+        "x": 1020,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "3c21d162f12ff536",
+        "type": "s7 out",
+        "z": "e6fb18970dbe710a",
+        "endpoint": "8f68ce2609b0d4ea",
+        "variable": "Voltage",
+        "name": "",
+        "x": 1000,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "1984dd42b8dc1fbb",
+        "type": "s7 out",
+        "z": "e6fb18970dbe710a",
+        "endpoint": "8f68ce2609b0d4ea",
+        "variable": "Total Operating Time",
+        "name": "",
+        "x": 1040,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "603578c376dfed22",
+        "type": "s7 out",
+        "z": "e6fb18970dbe710a",
+        "endpoint": "8f68ce2609b0d4ea",
+        "variable": "Overload Fault Duration",
+        "name": "",
+        "x": 1050,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "4da7843053fd074b",
+        "type": "s7 out",
+        "z": "e6fb18970dbe710a",
+        "endpoint": "8f68ce2609b0d4ea",
+        "variable": "Speed",
+        "name": "",
+        "x": 990,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "feb71e858f4eafaf",
+        "type": "s7 out",
+        "z": "e6fb18970dbe710a",
+        "endpoint": "8f68ce2609b0d4ea",
+        "variable": "Acceleration Time",
+        "name": "",
+        "x": 1030,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "a4171de4350be9ff",
+        "type": "s7 out",
+        "z": "e6fb18970dbe710a",
+        "endpoint": "8f68ce2609b0d4ea",
+        "variable": "Deceleration Time",
+        "name": "",
+        "x": 1030,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "371b485e184a2f70",
+        "type": "s7 in",
+        "z": "e6fb18970dbe710a",
+        "endpoint": "8f68ce2609b0d4ea",
+        "mode": "single",
+        "variable": "Speed",
+        "diff": true,
+        "name": "",
+        "x": 90,
+        "y": 180,
+        "wires": [
+            [
+                "2e498c2b4c315d72"
+            ]
+        ]
+    },
+    {
+        "id": "9268be8bfae804d6",
+        "type": "s7 in",
+        "z": "e6fb18970dbe710a",
+        "endpoint": "8f68ce2609b0d4ea",
+        "mode": "single",
+        "variable": "Acceleration Time",
+        "diff": true,
+        "name": "",
+        "x": 130,
+        "y": 240,
+        "wires": [
+            [
+                "dff345e477362ff6"
+            ]
+        ]
+    },
+    {
+        "id": "363b732f5dd85b5f",
+        "type": "s7 in",
+        "z": "e6fb18970dbe710a",
+        "endpoint": "8f68ce2609b0d4ea",
+        "mode": "single",
+        "variable": "Deceleration Time",
+        "diff": true,
+        "name": "",
+        "x": 130,
+        "y": 300,
+        "wires": [
+            [
+                "9e40d0a1dc52c7be"
+            ]
+        ]
+    },
+    {
+        "id": "bf050348265ae086",
+        "type": "s7 in",
+        "z": "e6fb18970dbe710a",
+        "endpoint": "8f68ce2609b0d4ea",
+        "mode": "single",
+        "variable": "PS Detect",
+        "diff": false,
+        "name": "",
+        "x": 100,
+        "y": 1780,
+        "wires": [
+            [
+                "587dfcaef4a0c2e2"
+            ]
+        ]
+    },
+    {
+        "id": "3d40713efa9a9479",
+        "type": "mqtt out",
+        "z": "e6fb18970dbe710a",
+        "name": "",
+        "topic": "ps_detect",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "309fad6d487ab47f",
+        "x": 460,
+        "y": 1780,
+        "wires": []
+    },
+    {
+        "id": "c5ef0e1eacd78dd8",
+        "type": "mqtt in",
+        "z": "e6fb18970dbe710a",
+        "name": "",
+        "topic": "status_product",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "309fad6d487ab47f",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 120,
+        "y": 2020,
+        "wires": [
+            [
+                "b5eb161970ebdeef"
+            ]
+        ]
+    },
+    {
+        "id": "e61d770a26057895",
+        "type": "s7 out",
+        "z": "e6fb18970dbe710a",
+        "endpoint": "8f68ce2609b0d4ea",
+        "variable": "Status Good Product",
+        "name": "",
+        "x": 960,
+        "y": 1920,
+        "wires": []
+    },
+    {
+        "id": "0b2eb7270a10a798",
+        "type": "switch",
+        "z": "e6fb18970dbe710a",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "true",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "false",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 450,
+        "y": 2020,
+        "wires": [
+            [
+                "669ad74b443356d3",
+                "8b89f3f8acf14493",
+                "913b47159edf28bb"
+            ],
+            [
+                "c0b538c2d41136ba",
+                "166fd5ad85f80a06",
+                "6d50b572c089dcb2"
+            ]
+        ]
+    },
+    {
+        "id": "734f30f10849aef5",
+        "type": "s7 out",
+        "z": "e6fb18970dbe710a",
+        "endpoint": "8f68ce2609b0d4ea",
+        "variable": "Status Reject Product",
+        "name": "",
+        "x": 960,
+        "y": 2120,
+        "wires": []
+    },
+    {
+        "id": "dff345e477362ff6",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Acceleration Time",
+        "func": "var data = msg.payload\ndata = data / 100\n\nmsg.payload = data\nnode.send(msg)",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 240,
+        "wires": [
+            [
+                "1d168b33974d81a3"
+            ]
+        ]
+    },
+    {
+        "id": "9e40d0a1dc52c7be",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Deceleration Time",
+        "func": "var data = msg.payload\ndata = data / 100\n\nmsg.payload = data\nnode.send(msg)",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 300,
+        "wires": [
+            [
+                "5ac4bd8861b644e6"
+            ]
+        ]
+    },
+    {
+        "id": "a56729fb6fbc9e32",
+        "type": "s7 in",
+        "z": "e6fb18970dbe710a",
+        "endpoint": "8f68ce2609b0d4ea",
+        "mode": "single",
+        "variable": "Indicator Run",
+        "diff": false,
+        "name": "",
+        "x": 110,
+        "y": 480,
+        "wires": [
+            [
+                "c55775c361c04a4e"
+            ]
+        ]
+    },
+    {
+        "id": "3ac7ce2ee5079d92",
+        "type": "s7 in",
+        "z": "e6fb18970dbe710a",
+        "endpoint": "8f68ce2609b0d4ea",
+        "mode": "single",
+        "variable": "Indicator Reset",
+        "diff": false,
+        "name": "",
+        "x": 120,
+        "y": 540,
+        "wires": [
+            [
+                "19a02f7ddf58a021"
+            ]
+        ]
+    },
+    {
+        "id": "22646ccf95eb8e6e",
+        "type": "s7 in",
+        "z": "e6fb18970dbe710a",
+        "endpoint": "8f68ce2609b0d4ea",
+        "mode": "single",
+        "variable": "Emergency Switch",
+        "diff": false,
+        "name": "",
+        "x": 130,
+        "y": 600,
+        "wires": [
+            [
+                "754b1fc41e5c15cd"
+            ]
+        ]
+    },
+    {
+        "id": "c59019d4cb9d13cc",
+        "type": "s7 in",
+        "z": "e6fb18970dbe710a",
+        "endpoint": "8f68ce2609b0d4ea",
+        "mode": "single",
+        "variable": "Status Inverter",
+        "diff": false,
+        "name": "",
+        "x": 120,
+        "y": 660,
+        "wires": [
+            [
+                "763175c9819d4c23"
+            ]
+        ]
+    },
+    {
+        "id": "702c08ca9dec70b1",
+        "type": "s7 in",
+        "z": "e6fb18970dbe710a",
+        "endpoint": "8f68ce2609b0d4ea",
+        "mode": "single",
+        "variable": "Total Good Product",
+        "diff": false,
+        "name": "",
+        "x": 770,
+        "y": 980,
+        "wires": [
+            [
+                "18dd5ca06d720a67"
+            ]
+        ]
+    },
+    {
+        "id": "e3833d966c7e23f8",
+        "type": "s7 in",
+        "z": "e6fb18970dbe710a",
+        "endpoint": "8f68ce2609b0d4ea",
+        "mode": "single",
+        "variable": "Total Reject Product",
+        "diff": false,
+        "name": "",
+        "x": 770,
+        "y": 1040,
+        "wires": [
+            [
+                "d374f3aa280ff9ec"
+            ]
+        ]
+    },
+    {
+        "id": "399afe82e54ede90",
+        "type": "s7 in",
+        "z": "e6fb18970dbe710a",
+        "endpoint": "8f68ce2609b0d4ea",
+        "mode": "single",
+        "variable": "Total Sorting",
+        "diff": false,
+        "name": "",
+        "x": 750,
+        "y": 1100,
+        "wires": [
+            [
+                "69dfe5aadb9b1c13"
+            ]
+        ]
+    },
+    {
+        "id": "3da3718acbea37c4",
+        "type": "s7 in",
+        "z": "e6fb18970dbe710a",
+        "endpoint": "8f68ce2609b0d4ea",
+        "mode": "single",
+        "variable": "Current Good Product",
+        "diff": false,
+        "name": "",
+        "x": 780,
+        "y": 1160,
+        "wires": [
+            [
+                "65658133505165f2"
+            ]
+        ]
+    },
+    {
+        "id": "ed22c9f61f8306e2",
+        "type": "s7 in",
+        "z": "e6fb18970dbe710a",
+        "endpoint": "8f68ce2609b0d4ea",
+        "mode": "single",
+        "variable": "Current Reject Product",
+        "diff": false,
+        "name": "",
+        "x": 780,
+        "y": 1220,
+        "wires": [
+            [
+                "73968d4b126a08ba"
+            ]
+        ]
+    },
+    {
+        "id": "7301dcc70ab5a892",
+        "type": "s7 in",
+        "z": "e6fb18970dbe710a",
+        "endpoint": "8f68ce2609b0d4ea",
+        "mode": "single",
+        "variable": "Current Sorting",
+        "diff": false,
+        "name": "",
+        "x": 760,
+        "y": 1280,
+        "wires": [
+            [
+                "236b8a286d9f9057"
+            ]
+        ]
+    },
+    {
+        "id": "f97cee37a370f01d",
+        "type": "ui_gauge",
+        "z": "e6fb18970dbe710a",
+        "name": "",
+        "group": "3873457bf1ee6a68",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "gtype": "gage",
+        "title": "Output Velocity",
+        "label": "rpm",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1500",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1260,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "477bc64a2efa0e3f",
+        "type": "ui_gauge",
+        "z": "e6fb18970dbe710a",
+        "name": "",
+        "group": "4c63576068bc634c",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "gtype": "gage",
+        "title": "Motor Frequency",
+        "label": "Hz",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1270,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "4f1a05a39a8fdc3a",
+        "type": "ui_chart",
+        "z": "e6fb18970dbe710a",
+        "name": "",
+        "group": "e83bb7a6d8b751ed",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Motor Current (A)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "50",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 1270,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8935e17aa9bf0a74",
+        "type": "ui_chart",
+        "z": "e6fb18970dbe710a",
+        "name": "",
+        "group": "bd3a19e870a0651a",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Voltage (V)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "240",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 1250,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9ce28b23f1eed5f9",
+        "type": "ui_text",
+        "z": "e6fb18970dbe710a",
+        "group": "dd3b0888607c2154",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Total Operating Time (hour) : ",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 1300,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "d1cffe80a347a09a",
+        "type": "ui_text",
+        "z": "e6fb18970dbe710a",
+        "group": "dd3b0888607c2154",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Overload Fault Duration (min) : ",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 1310,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "1cec313fb5eb63b0",
+        "type": "ui_text",
+        "z": "e6fb18970dbe710a",
+        "group": "a8c239e6e8183cc1",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Speed (rpm) : ",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 1260,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "f4314034a6e5f6d9",
+        "type": "ui_text",
+        "z": "e6fb18970dbe710a",
+        "group": "a8c239e6e8183cc1",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Acceleration Time (s) : ",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 1280,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "6b1c93209bd92419",
+        "type": "ui_text",
+        "z": "e6fb18970dbe710a",
+        "group": "a8c239e6e8183cc1",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Deceleration Time (s) : ",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 1280,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "74ac192f8920e00a",
+        "type": "ui_chart",
+        "z": "e6fb18970dbe710a",
+        "name": "",
+        "group": "5b56ebfa824c4e79",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Total Sorting",
+        "chartType": "pie",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": "50",
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#2ca02c",
+            "#d62728",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1230,
+        "y": 1000,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0123eeb75ed3221e",
+        "type": "ui_chart",
+        "z": "e6fb18970dbe710a",
+        "name": "",
+        "group": "5b56ebfa824c4e79",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Current Shift Sorting",
+        "chartType": "pie",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": "50",
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#2ca02c",
+            "#d62728",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1260,
+        "y": 1180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b252c91c61628cc7",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Acceleration Time (Read)",
+        "func": "if(msg.topic == 'acceleration_time'){\n    var data = msg.payload\n    var buf = Buffer.from([data.buffer[0],data.buffer[1],data.buffer[2],data.buffer[3]])\n    var res = buf.readInt16BE()\n    res = res * 100\n    msg.payload = res\n    node.send(msg)\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 540,
+        "wires": [
+            [
+                "feb71e858f4eafaf"
+            ]
+        ]
+    },
+    {
+        "id": "693d65455ed0c11e",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Deceleration Time (Read)",
+        "func": "if(msg.topic == 'deceleration_time'){\n    var data = msg.payload\n    var buf = Buffer.from([data.buffer[0],data.buffer[1]])\n    var res = buf.readInt16BE()\n    res = res * 100\n    msg.payload = res\n    node.send(msg)\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 600,
+        "wires": [
+            [
+                "a4171de4350be9ff"
+            ]
+        ]
+    },
+    {
+        "id": "eeeb5fa0835c77e4",
+        "type": "ui_button",
+        "z": "e6fb18970dbe710a",
+        "name": "",
+        "group": "392326a2a899d0f2",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Refresh",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "date",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 100,
+        "y": 1300,
+        "wires": [
+            [
+                "a80258f5991cc7cf"
+            ]
+        ]
+    },
+    {
+        "id": "b16059d6ea6b0bae",
+        "type": "postgresql",
+        "z": "e6fb18970dbe710a",
+        "name": "Insert Inverter Data",
+        "query": "INSERT INTO inverter VALUES (DEFAULT, $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11);",
+        "postgreSQLConfig": "5be9579b85d36a31",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 510,
+        "y": 1560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4176589d929ad3e6",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Inverter Data",
+        "func": "var send = global.get('send')\nvar date_now = new Date()\nvar date = date_now.toDateString()\nvar time = date_now.toTimeString()\ntime = time.slice(0, -25)\ntime = time.replace('GMT','')\n\nvar output_velocity = global.get('output_velocity')\nvar motor_frequency = global.get('motor_frequency')\nvar motor_current = global.get('motor_current')\nvar voltage = global.get('voltage')\nvar total_operating_time = global.get('total_operating_time')\nvar overload_fault_duration = global.get('overload_fault_duration')\nvar speed = global.get('speed')\nvar acceleration_time = global.get('acceleration_time')\nvar deceleration_time = global.get('deceleration_time')\n\nmsg.payload = '';\nmsg.params = [output_velocity, motor_frequency, motor_current, voltage, total_operating_time, overload_fault_duration, speed, acceleration_time, deceleration_time, date, time]\n\nif(send == true){\n    node.send(msg)\n    global.set('send', false)\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 1560,
+        "wires": [
+            [
+                "b16059d6ea6b0bae"
+            ]
+        ]
+    },
+    {
+        "id": "5ac4bd8861b644e6",
+        "type": "modbus-write",
+        "z": "e6fb18970dbe710a",
+        "name": "Dec Time Write",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "unitid": "1",
+        "dataType": "HoldingRegister",
+        "adr": "9002",
+        "quantity": "1",
+        "server": "5842d9efa2d6aeb2",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "x": 520,
+        "y": 300,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "1d168b33974d81a3",
+        "type": "modbus-write",
+        "z": "e6fb18970dbe710a",
+        "name": "Acc Time Write",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "unitid": "1",
+        "dataType": "HoldingRegister",
+        "adr": "9001",
+        "quantity": "1",
+        "server": "5842d9efa2d6aeb2",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "x": 520,
+        "y": 240,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "444f68a9736a6388",
+        "type": "modbus-write",
+        "z": "e6fb18970dbe710a",
+        "name": "Speed Write",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "unitid": "1",
+        "dataType": "HoldingRegister",
+        "adr": "5281",
+        "quantity": "1",
+        "server": "5842d9efa2d6aeb2",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "x": 510,
+        "y": 180,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "2e498c2b4c315d72",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Speed",
+        "func": "var data = msg.payload\nvar speed_setpoint = data\ndata = (data*2)/3\nmsg.payload = parseInt(data)\nglobal.set('speed_setpoint', speed_setpoint)\n\nnode.send(msg)",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 180,
+        "wires": [
+            [
+                "444f68a9736a6388"
+            ]
+        ]
+    },
+    {
+        "id": "98b34539fd288ce0",
+        "type": "comment",
+        "z": "e6fb18970dbe710a",
+        "name": "Read from Inverter via Modbus RTU",
+        "info": "",
+        "x": 180,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "73c603c642004c7e",
+        "type": "comment",
+        "z": "e6fb18970dbe710a",
+        "name": "Write to Inverter via Modbus RTU",
+        "info": "",
+        "x": 170,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "3a9051a41ac440c8",
+        "type": "comment",
+        "z": "e6fb18970dbe710a",
+        "name": "Get Status from PLC",
+        "info": "",
+        "x": 130,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "d9b1c6860c7acd94",
+        "type": "comment",
+        "z": "e6fb18970dbe710a",
+        "name": "Get Sorting from PLC",
+        "info": "",
+        "x": 780,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "3ee4e39f37fe21bf",
+        "type": "comment",
+        "z": "e6fb18970dbe710a",
+        "name": "MQTT to Jetson Nano",
+        "info": "",
+        "x": 140,
+        "y": 1740,
+        "wires": []
+    },
+    {
+        "id": "8b8e45adb374ad64",
+        "type": "inject",
+        "z": "e6fb18970dbe710a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 1620,
+        "wires": [
+            [
+                "4176589d929ad3e6",
+                "282aa1349f69f7a5",
+                "77015866428fbd0e"
+            ]
+        ]
+    },
+    {
+        "id": "9afcd48735cc95b4",
+        "type": "ui_table",
+        "z": "e6fb18970dbe710a",
+        "group": "392326a2a899d0f2",
+        "name": "Inverter Data Log",
+        "order": 6,
+        "width": "27",
+        "height": "10",
+        "columns": [
+            {
+                "field": "id",
+                "title": "ID",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "output_velocity",
+                "title": "Output Velocity (rpm)",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "motor_frequency",
+                "title": "Motor Frequency (Hz)",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "motor_current",
+                "title": "Motor Current (A)",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "voltage",
+                "title": "Voltage (V)",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "total_operating_time",
+                "title": "Total Operating Time (h)",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "overload_fault_duration",
+                "title": "Overload Fault Duration (min)",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "speed",
+                "title": "Speed Setpoint (rpm)",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "acceleration_time",
+                "title": "Acceleration Time (s)",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "deceleration_time",
+                "title": "Deceleration Time (s)",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "date",
+                "title": "Date",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "time",
+                "title": "Time",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 470,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "a80258f5991cc7cf",
+        "type": "postgresql",
+        "z": "e6fb18970dbe710a",
+        "name": "Get Inverter Data",
+        "query": "SELECT * FROM inverter ORDER BY id DESC LIMIT 100;",
+        "postgreSQLConfig": "5be9579b85d36a31",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 270,
+        "y": 1300,
+        "wires": [
+            [
+                "9afcd48735cc95b4"
+            ]
+        ]
+    },
+    {
+        "id": "117a663ac7483e46",
+        "type": "ui_chart",
+        "z": "e6fb18970dbe710a",
+        "name": "",
+        "group": "3873457bf1ee6a68",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Output Velocity (rpm)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "1500",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 1280,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f099c0abea9c4cbe",
+        "type": "ui_chart",
+        "z": "e6fb18970dbe710a",
+        "name": "",
+        "group": "4c63576068bc634c",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Motor Frequency (Hz)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 1280,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bb608dca623f9723",
+        "type": "comment",
+        "z": "e6fb18970dbe710a",
+        "name": "Show Data",
+        "info": "",
+        "x": 100,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "adf212192f47bc80",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Target Sorting",
+        "func": "var data = msg.payload\nglobal.set('target_sorting', data)\nmsg.payload = parseInt(data)\n\nnode.send(msg)",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1160,
+        "y": 1580,
+        "wires": [
+            [
+                "defd946ea7b93f3b"
+            ]
+        ]
+    },
+    {
+        "id": "c55775c361c04a4e",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Run",
+        "func": "var data = msg.payload\nglobal.set('run', data)\n\nif(data == false){\n    global.set('stop', true)\n}\nelse{\n    global.set('stop', false)\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "19a02f7ddf58a021",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Reset",
+        "func": "var data = msg.payload\nglobal.set('reset', data)",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "754b1fc41e5c15cd",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Emergency Switch",
+        "func": "var data = msg.payload\nglobal.set('emergency_switch', data)",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "763175c9819d4c23",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Status Inverter",
+        "func": "var data = msg.payload\nglobal.set('status_inverter', data)\nmsg.payload = data\nnode.send(msg)",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "18dd5ca06d720a67",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Total Good Product",
+        "func": "var data = msg.payload\nglobal.set('total_good_product', data)\nmsg.payload = data\nnode.send(msg)",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1010,
+        "y": 980,
+        "wires": [
+            [
+                "74ac192f8920e00a"
+            ]
+        ]
+    },
+    {
+        "id": "d374f3aa280ff9ec",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Total Reject Product",
+        "func": "var data = msg.payload\nglobal.set('total_reject_product', data)\nmsg.payload = data\nnode.send(msg)",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1020,
+        "y": 1040,
+        "wires": [
+            [
+                "74ac192f8920e00a"
+            ]
+        ]
+    },
+    {
+        "id": "69dfe5aadb9b1c13",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Total Sorting",
+        "func": "var data = msg.payload\nglobal.set('total_sorting', data)\nmsg.payload = data\nnode.send(msg)",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 990,
+        "y": 1100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "65658133505165f2",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Current Good Product",
+        "func": "var data = msg.payload\nglobal.set('current_good_product', data)\nmsg.payload = data\nnode.send(msg)",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1020,
+        "y": 1160,
+        "wires": [
+            [
+                "0123eeb75ed3221e"
+            ]
+        ]
+    },
+    {
+        "id": "73968d4b126a08ba",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Current Reject Product",
+        "func": "var data = msg.payload\nglobal.set('current_reject_product', data)\nmsg.payload = data\nnode.send(msg)",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1020,
+        "y": 1220,
+        "wires": [
+            [
+                "0123eeb75ed3221e"
+            ]
+        ]
+    },
+    {
+        "id": "236b8a286d9f9057",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Current Sorting",
+        "func": "var data = msg.payload\nglobal.set('current_sorting', data)\nmsg.payload = data\nnode.send(msg)",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1000,
+        "y": 1280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "282aa1349f69f7a5",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "PLC Status",
+        "func": "var date_now = new Date()\nvar date = date_now.toDateString()\nvar time = date_now.toTimeString()\ntime = time.slice(0, -25)\ntime = time.replace('GMT','')\n\nvar total_queue = global.get('total_queue')\nvar run = global.get('run')\nvar stop = global.get('stop')\nvar reset = global.get('reset')\nvar emergency_switch = global.get('emergency_switch')\nvar status_inverter = global.get('status_inverter')\nvar pusher_adv = global.get('pusher_adv')\nvar pusher_rtc = global.get('pusher_rtc')\nvar mode = global.get('mode')\nvar ps_detect = global.get('ps_detect')\nvar ps_get_result = global.get('ps_get_result')\nvar ps_trigger = global.get('ps_trigger')\n\nmsg.payload = '';\nmsg.params = [total_queue, run, stop, reset, emergency_switch, status_inverter, pusher_adv, pusher_rtc, mode, ps_detect, ps_get_result, ps_trigger, date, time]\nnode.send(msg)",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 1620,
+        "wires": [
+            [
+                "cf68dd6b03b6769c"
+            ]
+        ]
+    },
+    {
+        "id": "119e2941787baf01",
+        "type": "s7 in",
+        "z": "e6fb18970dbe710a",
+        "endpoint": "8f68ce2609b0d4ea",
+        "mode": "single",
+        "variable": "Sensor Pusher ADV",
+        "diff": false,
+        "name": "",
+        "x": 130,
+        "y": 720,
+        "wires": [
+            [
+                "482cde456c72589e"
+            ]
+        ]
+    },
+    {
+        "id": "64f60569798a4298",
+        "type": "s7 in",
+        "z": "e6fb18970dbe710a",
+        "endpoint": "8f68ce2609b0d4ea",
+        "mode": "single",
+        "variable": "Sensor Pusher RTC",
+        "diff": false,
+        "name": "",
+        "x": 130,
+        "y": 780,
+        "wires": [
+            [
+                "547435a40b2d8d44"
+            ]
+        ]
+    },
+    {
+        "id": "482cde456c72589e",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Pusher ADV",
+        "func": "var data = msg.payload\nglobal.set('pusher_adv', data)",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "547435a40b2d8d44",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Pusher RTC",
+        "func": "var data = msg.payload\nglobal.set('pusher_rtc', data)",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "35d9d3336e3bec51",
+        "type": "s7 in",
+        "z": "e6fb18970dbe710a",
+        "endpoint": "8f68ce2609b0d4ea",
+        "mode": "single",
+        "variable": "Mode",
+        "diff": false,
+        "name": "",
+        "x": 90,
+        "y": 900,
+        "wires": [
+            [
+                "73a25eb75ce6dadf"
+            ]
+        ]
+    },
+    {
+        "id": "73a25eb75ce6dadf",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Mode",
+        "func": "var data = msg.payload\nglobal.set('mode', data)",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cf68dd6b03b6769c",
+        "type": "postgresql",
+        "z": "e6fb18970dbe710a",
+        "name": "Insert PLC Status",
+        "query": "INSERT INTO plc_status VALUES (DEFAULT, $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14);",
+        "postgreSQLConfig": "5be9579b85d36a31",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 510,
+        "y": 1620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "979a56256ec72e0e",
+        "type": "ui_button",
+        "z": "e6fb18970dbe710a",
+        "name": "",
+        "group": "14044d4f3ceb064a",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Refresh",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "date",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 100,
+        "y": 1360,
+        "wires": [
+            [
+                "3f1fbd5760f47048"
+            ]
+        ]
+    },
+    {
+        "id": "a87af04ffebb7653",
+        "type": "ui_table",
+        "z": "e6fb18970dbe710a",
+        "group": "14044d4f3ceb064a",
+        "name": "PLC Status Log",
+        "order": 6,
+        "width": "27",
+        "height": "10",
+        "columns": [
+            {
+                "field": "id",
+                "title": "ID",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "total_queue",
+                "title": "Total Queue",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "run",
+                "title": "Run",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "stop",
+                "title": "Stop",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "reset",
+                "title": "Reset",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "emergency_switch",
+                "title": "Emergency Switch",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "status_inverter",
+                "title": "Status Inverter",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "pusher_adv",
+                "title": "Pusher Advance",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "pusher_rtc",
+                "title": "Pusher Retract",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "mode",
+                "title": "Mode",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "ps_detect",
+                "title": "PS Detect",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "ps_get_result",
+                "title": "PS Get Result",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "ps_trigger",
+                "title": "PS Trigger",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "date",
+                "title": "Date",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "time",
+                "title": "Time",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 460,
+        "y": 1360,
+        "wires": []
+    },
+    {
+        "id": "3f1fbd5760f47048",
+        "type": "postgresql",
+        "z": "e6fb18970dbe710a",
+        "name": "Get PLC Status",
+        "query": "SELECT * FROM plc_status ORDER BY id DESC LIMIT 100;",
+        "postgreSQLConfig": "5be9579b85d36a31",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 260,
+        "y": 1360,
+        "wires": [
+            [
+                "a87af04ffebb7653"
+            ]
+        ]
+    },
+    {
+        "id": "e86a5ec8e8a4117b",
+        "type": "comment",
+        "z": "e6fb18970dbe710a",
+        "name": "Alarm",
+        "info": "",
+        "x": 730,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "77015866428fbd0e",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Alarm",
+        "func": "var date_now = new Date()\nvar date = date_now.toDateString()\nvar time = date_now.toTimeString()\ntime = time.slice(0, -25)\ntime = time.replace('GMT','')\n\nvar alarm_ps_trigger = global.get('alarm_ps_trigger')\nvar alarm_speed_shutdown = global.get('alarm_speed_shutdown')\n\nmsg.payload = '';\nmsg.params = [alarm_ps_trigger, alarm_speed_shutdown, date, time]\nnode.send(msg)",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 1680,
+        "wires": [
+            [
+                "e9d8852b448cec0a"
+            ]
+        ]
+    },
+    {
+        "id": "e9d8852b448cec0a",
+        "type": "postgresql",
+        "z": "e6fb18970dbe710a",
+        "name": "Insert Alarm",
+        "query": "INSERT INTO alarm VALUES (DEFAULT, $1, $2, $3, $4);",
+        "postgreSQLConfig": "5be9579b85d36a31",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 490,
+        "y": 1680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4f7be019db3aa096",
+        "type": "ui_button",
+        "z": "e6fb18970dbe710a",
+        "name": "",
+        "group": "1ff15fa6497d7654",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Refresh",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "date",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 100,
+        "y": 1420,
+        "wires": [
+            [
+                "1bcb6a3d97b0415b"
+            ]
+        ]
+    },
+    {
+        "id": "eb057ef2865063db",
+        "type": "ui_table",
+        "z": "e6fb18970dbe710a",
+        "group": "1ff15fa6497d7654",
+        "name": "Alarm Log",
+        "order": 6,
+        "width": "27",
+        "height": "10",
+        "columns": [
+            {
+                "field": "id",
+                "title": "ID",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "ps_trigger",
+                "title": "PS Trigger",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "speed_shutdown",
+                "title": "Speed Shutdown",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "date",
+                "title": "Date",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "time",
+                "title": "Time",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 450,
+        "y": 1420,
+        "wires": []
+    },
+    {
+        "id": "1bcb6a3d97b0415b",
+        "type": "postgresql",
+        "z": "e6fb18970dbe710a",
+        "name": "Get Alarm Log",
+        "query": "SELECT * FROM alarm ORDER BY id DESC LIMIT 100;",
+        "postgreSQLConfig": "5be9579b85d36a31",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 260,
+        "y": 1420,
+        "wires": [
+            [
+                "eb057ef2865063db"
+            ]
+        ]
+    },
+    {
+        "id": "f06efb28850dec06",
+        "type": "comment",
+        "z": "e6fb18970dbe710a",
+        "name": "Data Logger",
+        "info": "",
+        "x": 110,
+        "y": 1560,
+        "wires": []
+    },
+    {
+        "id": "37a531f17752806f",
+        "type": "ui_gauge",
+        "z": "e6fb18970dbe710a",
+        "name": "",
+        "group": "e83bb7a6d8b751ed",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "gtype": "gage",
+        "title": "Motor Current",
+        "label": "A",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "2",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1260,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "7a8bab5ba28953de",
+        "type": "ui_gauge",
+        "z": "e6fb18970dbe710a",
+        "name": "",
+        "group": "bd3a19e870a0651a",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "gtype": "gage",
+        "title": "Voltage",
+        "label": "V",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "240",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "225",
+        "seg2": "235",
+        "x": 1240,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "669ad74b443356d3",
+        "type": "http request",
+        "z": "e6fb18970dbe710a",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 610,
+        "y": 1960,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "aa32329a556d07a2",
+        "type": "mqtt out",
+        "z": "e6fb18970dbe710a",
+        "name": "",
+        "topic": "status_product",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "309fad6d487ab47f",
+        "x": 400,
+        "y": 2160,
+        "wires": []
+    },
+    {
+        "id": "a1ecc32c3bdee3b0",
+        "type": "inject",
+        "z": "e6fb18970dbe710a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 2160,
+        "wires": [
+            [
+                "d70443202cdd135e"
+            ]
+        ]
+    },
+    {
+        "id": "d70443202cdd135e",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "True",
+        "func": "msg.payload = 'true,1'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 2160,
+        "wires": [
+            [
+                "aa32329a556d07a2"
+            ]
+        ]
+    },
+    {
+        "id": "3979010a4e284393",
+        "type": "mqtt out",
+        "z": "e6fb18970dbe710a",
+        "name": "",
+        "topic": "status_product",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "309fad6d487ab47f",
+        "x": 400,
+        "y": 2220,
+        "wires": []
+    },
+    {
+        "id": "62ef3ae2bab7dd5b",
+        "type": "inject",
+        "z": "e6fb18970dbe710a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 2220,
+        "wires": [
+            [
+                "fe146f1351871153"
+            ]
+        ]
+    },
+    {
+        "id": "fe146f1351871153",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "False",
+        "func": "msg.payload = 'false,2'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 2220,
+        "wires": [
+            [
+                "3979010a4e284393"
+            ]
+        ]
+    },
+    {
+        "id": "8b89f3f8acf14493",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Send Status Like Push Button (Good)",
+        "func": "var data = msg.payload\nif(data == 'true'){\n    msg.payload = true\n}\nnode.send(msg)\n\nsetTimeout(function(){\n    msg.payload = false\n    node.send(msg)\n    data = ''\n}, 500);",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 1920,
+        "wires": [
+            [
+                "e61d770a26057895"
+            ]
+        ]
+    },
+    {
+        "id": "c0b538c2d41136ba",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Send Status Like Push Button (Reject)",
+        "func": "var data = msg.payload\nif(data == 'false'){\n    msg.payload = true\n}\nnode.send(msg)\n\nsetTimeout(function(){\n    msg.payload = false\n    node.send(msg)\n    data = ''\n}, 500);",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 2120,
+        "wires": [
+            [
+                "734f30f10849aef5"
+            ]
+        ]
+    },
+    {
+        "id": "f960a9f2b0c2d92a",
+        "type": "comment",
+        "z": "e6fb18970dbe710a",
+        "name": "MQTT from Jetson Nano",
+        "info": "",
+        "x": 150,
+        "y": 1960,
+        "wires": []
+    },
+    {
+        "id": "e7cfd28848753207",
+        "type": "comment",
+        "z": "e6fb18970dbe710a",
+        "name": "MQTT Test",
+        "info": "",
+        "x": 100,
+        "y": 2120,
+        "wires": []
+    },
+    {
+        "id": "166fd5ad85f80a06",
+        "type": "http request",
+        "z": "e6fb18970dbe710a",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 610,
+        "y": 2080,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d2fc04413d64bd91",
+        "type": "s7 in",
+        "z": "e6fb18970dbe710a",
+        "endpoint": "8f68ce2609b0d4ea",
+        "mode": "single",
+        "variable": "PS Get Result",
+        "diff": false,
+        "name": "",
+        "x": 110,
+        "y": 1840,
+        "wires": [
+            [
+                "b3b35636a758c4af"
+            ]
+        ]
+    },
+    {
+        "id": "75e86bd160fa3251",
+        "type": "mqtt out",
+        "z": "e6fb18970dbe710a",
+        "name": "",
+        "topic": "ps_get_result",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "309fad6d487ab47f",
+        "x": 480,
+        "y": 1840,
+        "wires": []
+    },
+    {
+        "id": "b5eb161970ebdeef",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Split Message",
+        "func": "var data = msg.payload;\nconst myarray = data.split(',')\n\nif(myarray[0] == 'true'){\n    msg.payload = 'true'\n    global.set('sorting_result_true', myarray[1])\n}\nelse if(myarray[0] == 'false'){\n    msg.payload = 'false'\n    global.set('sorting_result_false', myarray[1])\n}\nnode.send(msg)",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 2020,
+        "wires": [
+            [
+                "0b2eb7270a10a798"
+            ]
+        ]
+    },
+    {
+        "id": "bec5945bcf293fde",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "% Total Good Product",
+        "func": "var total_good_product = global.get('total_good_product')\nvar total_sorting = global.get('total_sorting')\n\nlet percentage_total_good_product = (total_good_product / total_sorting)*100\n\nif(total_sorting == 0){\n    msg.payload = 0\n    global.set('%_total_good_product', 0)\n}\nelse{\n    msg.payload = parseInt(percentage_total_good_product)\n    global.set('%_total_good_product', msg.payload)\n}\nnode.send(msg)",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1020,
+        "y": 1340,
+        "wires": [
+            [
+                "72ddc4763ad5bcb6"
+            ]
+        ]
+    },
+    {
+        "id": "81b90c4788f3f90d",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "% Total Reject Product",
+        "func": "var total_reject_product = global.get('total_reject_product')\nvar total_sorting = global.get('total_sorting')\n\nvar percentage_total_reject_product = (total_reject_product / total_sorting)*100\n\nif(total_sorting == 0){\n    msg.payload = 0\n    global.set('%_total_reject_product', 0)\n}\nelse{\n    msg.payload = parseInt(percentage_total_reject_product)\n    global.set('%_total_reject_product', msg.payload)\n}\nnode.send(msg)",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1020,
+        "y": 1400,
+        "wires": [
+            [
+                "d0b402c14b6dfd79"
+            ]
+        ]
+    },
+    {
+        "id": "cc985790c84f4e65",
+        "type": "inject",
+        "z": "e6fb18970dbe710a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 770,
+        "y": 1480,
+        "wires": [
+            [
+                "bec5945bcf293fde",
+                "81b90c4788f3f90d",
+                "63299eddd0894271",
+                "b104977b1b2ae7dc",
+                "acbd090a23b3cb94"
+            ]
+        ]
+    },
+    {
+        "id": "63299eddd0894271",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "% Current Good Product",
+        "func": "var current_good_product = global.get('current_good_product')\nvar current_sorting = global.get('current_sorting')\n\nlet percentage_current_good_product = (current_good_product / current_sorting)*100\n\nif(current_sorting == 0){\n    msg.payload = 0\n    global.set('%_current_good_product', 0)\n}\nelse{\n    msg.payload = parseInt(percentage_current_good_product)\n    global.set('%_current_good_product', msg.payload)\n}\nnode.send(msg)",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 1460,
+        "wires": [
+            [
+                "4c1f34577a9dd699"
+            ]
+        ]
+    },
+    {
+        "id": "b104977b1b2ae7dc",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "% Current Reject Product",
+        "func": "var current_reject_product = global.get('current_reject_product')\nvar current_sorting = global.get('current_sorting')\n\nlet percentage_current_reject_product = (current_reject_product / current_sorting)*100\n\nif(current_sorting == 0){\n    msg.payload = 0\n    global.set('%_current_reject_product', 0)\n}\nelse{\n    msg.payload = parseInt(percentage_current_reject_product)\n    global.set('%_current_reject_product', msg.payload)\n}\nnode.send(msg)",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 1520,
+        "wires": [
+            [
+                "e856c2c8666772d6"
+            ]
+        ]
+    },
+    {
+        "id": "72ddc4763ad5bcb6",
+        "type": "s7 out",
+        "z": "e6fb18970dbe710a",
+        "endpoint": "8f68ce2609b0d4ea",
+        "variable": "% Total Good Product",
+        "name": "",
+        "x": 1260,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "d0b402c14b6dfd79",
+        "type": "s7 out",
+        "z": "e6fb18970dbe710a",
+        "endpoint": "8f68ce2609b0d4ea",
+        "variable": "% Total Reject Product",
+        "name": "",
+        "x": 1260,
+        "y": 1400,
+        "wires": []
+    },
+    {
+        "id": "4c1f34577a9dd699",
+        "type": "s7 out",
+        "z": "e6fb18970dbe710a",
+        "endpoint": "8f68ce2609b0d4ea",
+        "variable": "% Current Good Product",
+        "name": "",
+        "x": 1270,
+        "y": 1460,
+        "wires": []
+    },
+    {
+        "id": "e856c2c8666772d6",
+        "type": "s7 out",
+        "z": "e6fb18970dbe710a",
+        "endpoint": "8f68ce2609b0d4ea",
+        "variable": "% Current Reject Product",
+        "name": "",
+        "x": 1270,
+        "y": 1520,
+        "wires": []
+    },
+    {
+        "id": "1d66e7f9e374b0f8",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Data",
+        "func": "var array = []\n\n//Target Sorting\nvar target_sorting = global.get('target_sorting')\narray.push({\n    \"command\": \"update_text\",\n    \"selector\": \"#target_sorting\",\n    \"textContent\": target_sorting\n})\n\n//Run\nvar run = global.get('run')\nif(run == false){\n    array.push({\n        \"command\": \"set_style\",\n        \"selector\": \"#run\",\n        \"attributeName\": \"fill\",\n        \"attributeValue\": \"#999999\"\n    })\n}\nelse if(run == true){\n    array.push({\n        \"command\": \"set_style\",\n        \"selector\": \"#run\",\n        \"attributeName\": \"fill\",\n        \"attributeValue\": \"#38f363\"\n    })\n}\n\n//Stop\nvar stop = global.get('stop')\nif(stop == false){\n    array.push({\n        \"command\": \"set_style\",\n        \"selector\": \"#stop\",\n        \"attributeName\": \"fill\",\n        \"attributeValue\": \"#999999\"\n    })\n}\nelse if(stop == true){\n    array.push({\n        \"command\": \"set_style\",\n        \"selector\": \"#stop\",\n        \"attributeName\": \"fill\",\n        \"attributeValue\": \"#38f363\"\n    })\n}\n\n//Reset\nvar reset = global.get('reset')\nif(reset == false){\n    array.push({\n        \"command\": \"set_style\",\n        \"selector\": \"#reset\",\n        \"attributeName\": \"fill\",\n        \"attributeValue\": \"#999999\"\n    })\n}\nelse if(reset == true){\n    array.push({\n        \"command\": \"set_style\",\n        \"selector\": \"#reset\",\n        \"attributeName\": \"fill\",\n        \"attributeValue\": \"#38f363\"\n    })\n}\n\n//Emergency Switch\nvar emergency_switch = global.get('emergency_switch')\nif(emergency_switch == false){ //Pushed\n    array.push({\n        \"command\": \"set_style\",\n        \"selector\": \"#emergency_switch\",\n        \"attributeName\": \"fill\",\n        \"attributeValue\": \"#38f363\"\n    })\n}\nelse if(emergency_switch == true){\n    array.push({\n        \"command\": \"set_style\",\n        \"selector\": \"#emergency_switch\",\n        \"attributeName\": \"fill\",\n        \"attributeValue\": \"#999999\"\n    })\n}\n\n//Status Inverter\nvar status_inverter = global.get('status_inverter')\nif(status_inverter == true){\n    array.push({\n        \"command\": \"set_style\",\n        \"selector\": \"#motor_conveyor\",\n        \"attributeName\": \"fill\",\n        \"attributeValue\": \"#38f363\"\n    },\n    {\n        \"command\": \"set_style\",\n        \"selector\": \"#conveyor\",\n        \"attributeName\": \"fill\",\n        \"attributeValue\": \"#38f363\"\n    })\n}\nelse if(status_inverter == false){\n    array.push({\n        \"command\": \"set_style\",\n        \"selector\": \"#motor_conveyor\",\n        \"attributeName\": \"fill\",\n        \"attributeValue\": \"#999999\"\n    },\n    {\n        \"command\": \"set_style\",\n        \"selector\": \"#conveyor\",\n        \"attributeName\": \"fill\",\n        \"attributeValue\": \"#999999\"\n    })\n}\n\n//Advance\nvar advance = global.get('pusher_adv')\nif(advance == false){\n    array.push({\n        \"command\": \"set_style\",\n        \"selector\": \"#advance\",\n        \"attributeName\": \"fill\",\n        \"attributeValue\": \"#999999\"\n    })\n}\nelse if(advance == true){\n    array.push({\n        \"command\": \"set_style\",\n        \"selector\": \"#advance\",\n        \"attributeName\": \"fill\",\n        \"attributeValue\": \"#38f363\"\n    })\n}\n\n//Retract\nvar retract = global.get('pusher_rtc')\nif(retract == false){\n    array.push({\n        \"command\": \"set_style\",\n        \"selector\": \"#retract\",\n        \"attributeName\": \"fill\",\n        \"attributeValue\": \"#999999\"\n    })\n}\nelse if(retract == true){\n    array.push({\n        \"command\": \"set_style\",\n        \"selector\": \"#retract\",\n        \"attributeName\": \"fill\",\n        \"attributeValue\": \"#38f363\"\n    })\n}\n\n//PS Detect\nvar ps_detect = global.get('ps_detect')\nif(ps_detect == true){\n    array.push({\n        \"command\": \"set_style\",\n        \"selector\": \"#ps_detect\",\n        \"attributeName\": \"fill\",\n        \"attributeValue\": \"#38f363\"\n    })\n}\nelse{\n    array.push({\n        \"command\": \"set_style\",\n        \"selector\": \"#ps_detect\",\n        \"attributeName\": \"fill\",\n        \"attributeValue\": \"#999999\"\n    })\n}\n\n//PS Get Result\nvar ps_get_result = global.get('ps_get_result')\nif(ps_get_result == true){\n    array.push({\n        \"command\": \"set_style\",\n        \"selector\": \"#ps_get_result\",\n        \"attributeName\": \"fill\",\n        \"attributeValue\": \"#38f363\"\n    })\n}\nelse{\n    array.push({\n        \"command\": \"set_style\",\n        \"selector\": \"#ps_get_result\",\n        \"attributeName\": \"fill\",\n        \"attributeValue\": \"#999999\"\n    })\n}\n\n//PS Trigger\nvar ps_trigger = global.get('ps_trigger')\nif(ps_trigger == true){\n    array.push({\n        \"command\": \"set_style\",\n        \"selector\": \"#ps_trigger\",\n        \"attributeName\": \"fill\",\n        \"attributeValue\": \"#38f363\"\n    })\n}\nelse{\n    array.push({\n        \"command\": \"set_style\",\n        \"selector\": \"#ps_trigger\",\n        \"attributeName\": \"fill\",\n        \"attributeValue\": \"#999999\"\n    })\n}\n\n//Mode\nvar mode = global.get('mode')\nif(mode == true){\n    //Manual Mode\n    array.push({\n        \"command\": \"set_style\",\n        \"selector\": \"#manual\",\n        \"attributeName\": \"fill\",\n        \"attributeValue\": \"#38f363\"\n    },\n    {\n        \"command\": \"set_style\",\n        \"selector\": \"#auto\",\n        \"attributeName\": \"fill\",\n        \"attributeValue\": \"#999999\"\n    })\n}\nelse{\n    //Auto Mode\n    array.push({\n        \"command\": \"set_style\",\n        \"selector\": \"#auto\",\n        \"attributeName\": \"fill\",\n        \"attributeValue\": \"#38f363\"\n    },\n    {\n        \"command\": \"set_style\",\n        \"selector\": \"#manual\",\n        \"attributeName\": \"fill\",\n        \"attributeValue\": \"#999999\"\n    })\n}\n\n//Output Velocity\nvar output_velocity = global.get('output_velocity')\nif(output_velocity > 0){\n    array.push({\n        \"command\": \"update_text\",\n        \"selector\": \"#output_velocity\",\n        \"textContent\": output_velocity+' rpm'\n    },\n    {\n        \"command\": \"set_style\",\n        \"selector\": \"#motor_conveyor\",\n        \"attributeName\": \"fill\",\n        \"attributeValue\": \"#38f363\"\n    })\n}\nelse{\n    array.push({\n        \"command\": \"update_text\",\n        \"selector\": \"#output_velocity\",\n        \"textContent\": output_velocity+' rpm'\n    },\n    {\n        \"command\": \"set_style\",\n        \"selector\": \"#motor_conveyor\",\n        \"attributeName\": \"fill\",\n        \"attributeValue\": \"#999999\"\n    })\n}\n\n//Buffer 1\nvar buffer1 = global.get('buffer1')\nif(buffer1 == true){\n    array.push({\n        \"command\": \"update_text\",\n        \"selector\": \"#buffer1\",\n        \"textContent\": 'Good'\n    })\n}\nelse if(buffer1 == false){\n    array.push({\n        \"command\": \"update_text\",\n        \"selector\": \"#buffer1\",\n        \"textContent\": 'Reject'\n    })\n}\nelse{\n    array.push({\n        \"command\": \"update_text\",\n        \"selector\": \"#buffer1\",\n        \"textContent\": 'Empty'\n    })\n}\n\n//Buffer 2\nvar buffer2 = global.get('buffer2')\nif(buffer2 == true){\n    array.push({\n        \"command\": \"update_text\",\n        \"selector\": \"#buffer2\",\n        \"textContent\": 'Good'\n    })\n}\nelse if(buffer2 == false){\n    array.push({\n        \"command\": \"update_text\",\n        \"selector\": \"#buffer2\",\n        \"textContent\": 'Reject'\n    })\n}\nelse{\n    array.push({\n        \"command\": \"update_text\",\n        \"selector\": \"#buffer2\",\n        \"textContent\": 'Empty'\n    })\n}\n\n//Buffer 3\nvar buffer3 = global.get('buffer3')\nif(buffer3 == true){\n    array.push({\n        \"command\": \"update_text\",\n        \"selector\": \"#buffer3\",\n        \"textContent\": 'Good'\n    })\n}\nelse if(buffer3 == false){\n    array.push({\n        \"command\": \"update_text\",\n        \"selector\": \"#buffer3\",\n        \"textContent\": 'Reject'\n    })\n}\nelse{\n    array.push({\n        \"command\": \"update_text\",\n        \"selector\": \"#buffer3\",\n        \"textContent\": 'Empty'\n    })\n}\n\n//Total Sorting\nvar total_good_product = global.get('total_good_product')\nvar total_reject_product = global.get('total_reject_product')\nvar total_sorting = global.get('total_sorting')\n\n//Current Sorting\nvar current_good_product = global.get('current_good_product')\nvar current_reject_product = global.get('current_reject_product')\nvar current_sorting = global.get('current_sorting')\n\n//Percentage Sorting\nvar percentage_total_good_product = global.get('%_total_good_product')\nvar percentage_total_reject_product = global.get('%_total_reject_product')\nvar percentage_current_good_product = global.get('%_current_good_product')\nvar percentage_current_reject_product = global.get('%_current_reject_product')\n\narray.push({\n    \"command\": \"update_text\",\n    \"selector\": \"#total_good_product\",\n    \"textContent\": ': '+total_good_product+' ('+percentage_total_good_product+'%)'\n},\n{\n    \"command\": \"update_text\",\n    \"selector\": \"#total_reject_product\",\n    \"textContent\": ': '+total_reject_product+' ('+percentage_total_reject_product+'%)'\n},\n{\n    \"command\": \"update_text\",\n    \"selector\": \"#total_sorting\",\n    \"textContent\": ': '+total_sorting    \n},\n{\n    \"command\": \"update_text\",\n    \"selector\": \"#current_good_product\",\n    \"textContent\": ': '+current_good_product+' ('+percentage_current_good_product+'%)'\n},\n{\n    \"command\": \"update_text\",\n    \"selector\": \"#current_reject_product\",\n    \"textContent\": ': '+current_reject_product+' ('+percentage_current_reject_product+'%)'\n},\n{\n    \"command\": \"update_text\",\n    \"selector\": \"#current_sorting\",\n    \"textContent\": ': '+current_sorting\n})\nmsg.payload = array\n\nnode.send(msg)",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 1200,
+        "wires": [
+            [
+                "56f027babdc788c7"
+            ]
+        ]
+    },
+    {
+        "id": "c1134a0e0b2f8273",
+        "type": "inject",
+        "z": "e6fb18970dbe710a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "0.5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 1200,
+        "wires": [
+            [
+                "1d66e7f9e374b0f8"
+            ]
+        ]
+    },
+    {
+        "id": "5287811a9ec822c2",
+        "type": "s7 in",
+        "z": "e6fb18970dbe710a",
+        "endpoint": "8f68ce2609b0d4ea",
+        "mode": "single",
+        "variable": "Buffer 1",
+        "diff": false,
+        "name": "",
+        "x": 90,
+        "y": 960,
+        "wires": [
+            [
+                "bc1c1264ae3c3409"
+            ]
+        ]
+    },
+    {
+        "id": "2fe99d9033ab896a",
+        "type": "s7 in",
+        "z": "e6fb18970dbe710a",
+        "endpoint": "8f68ce2609b0d4ea",
+        "mode": "single",
+        "variable": "Buffer 2",
+        "diff": false,
+        "name": "",
+        "x": 90,
+        "y": 1020,
+        "wires": [
+            [
+                "45fe8eaadd9ebde9"
+            ]
+        ]
+    },
+    {
+        "id": "cafc1a5febf98165",
+        "type": "s7 in",
+        "z": "e6fb18970dbe710a",
+        "endpoint": "8f68ce2609b0d4ea",
+        "mode": "single",
+        "variable": "Buffer 3",
+        "diff": false,
+        "name": "",
+        "x": 90,
+        "y": 1080,
+        "wires": [
+            [
+                "9298d53b958de987"
+            ]
+        ]
+    },
+    {
+        "id": "bc1c1264ae3c3409",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Buffer 1",
+        "func": "var data = msg.payload\n\nif(data == 1){\n    global.set('buffer1', true)\n}\nelse if(data == 2){\n    global.set('buffer1', false)\n}\nelse{\n    global.set('buffer1', '-')\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 960,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "45fe8eaadd9ebde9",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Buffer 2",
+        "func": "var data = msg.payload\n\nif(data == 1){\n    global.set('buffer2', true)\n}\nelse if(data == 2){\n    global.set('buffer2', false)\n}\nelse{\n    global.set('buffer2', '-')\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 1020,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9298d53b958de987",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Buffer 3",
+        "func": "var data = msg.payload\n\nif(data == 1){\n    global.set('buffer3', true)\n}\nelse if(data == 2){\n    global.set('buffer3', false)\n}\nelse{\n    global.set('buffer3', '-')\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 1080,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8ee4215229027db9",
+        "type": "comment",
+        "z": "e6fb18970dbe710a",
+        "name": "Show Data to SVG Graphics",
+        "info": "",
+        "x": 160,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "a3ca173cd1bfc34a",
+        "type": "s7 in",
+        "z": "e6fb18970dbe710a",
+        "endpoint": "8f68ce2609b0d4ea",
+        "mode": "single",
+        "variable": "PS Trigger",
+        "diff": false,
+        "name": "",
+        "x": 100,
+        "y": 840,
+        "wires": [
+            [
+                "d124b0726eb30713"
+            ]
+        ]
+    },
+    {
+        "id": "d124b0726eb30713",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "PS Trigger",
+        "func": "var data = msg.payload\nglobal.set('ps_trigger', data)\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 840,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "587dfcaef4a0c2e2",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "PS Detect",
+        "func": "var data = msg.payload\nglobal.set('ps_detect', data)\nnode.send(msg)",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 1780,
+        "wires": [
+            [
+                "3d40713efa9a9479"
+            ]
+        ]
+    },
+    {
+        "id": "b3b35636a758c4af",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "PS Get Result",
+        "func": "var data = msg.payload\nglobal.set('ps_get_result', data)\nnode.send(msg)",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 1840,
+        "wires": [
+            [
+                "75e86bd160fa3251"
+            ]
+        ]
+    },
+    {
+        "id": "92011ca5f9de0883",
+        "type": "s7 in",
+        "z": "e6fb18970dbe710a",
+        "endpoint": "8f68ce2609b0d4ea",
+        "mode": "single",
+        "variable": "Alarm PS Trigger",
+        "diff": false,
+        "name": "",
+        "x": 760,
+        "y": 800,
+        "wires": [
+            [
+                "1286d0deb42a8d51"
+            ]
+        ]
+    },
+    {
+        "id": "eb3acc66be16cf6e",
+        "type": "s7 in",
+        "z": "e6fb18970dbe710a",
+        "endpoint": "8f68ce2609b0d4ea",
+        "mode": "single",
+        "variable": "Alarm Speed Shutdown",
+        "diff": false,
+        "name": "",
+        "x": 780,
+        "y": 860,
+        "wires": [
+            [
+                "1bec7bf1fa2c123b"
+            ]
+        ]
+    },
+    {
+        "id": "1286d0deb42a8d51",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Alarm PS Trigger",
+        "func": "var data = msg.payload\n\nif(data == 0){\n    global.set('alarm_ps_trigger', false)\n}\nelse if(data == 1){\n    global.set('alarm_ps_trigger', true)\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1010,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1bec7bf1fa2c123b",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Alarm Speed Shutdown",
+        "func": "var data = msg.payload\n\nif(data == 0){\n    global.set('alarm_speed_shutdown', false) \n}\nelse if (data == 1){\n    global.set('alarm_speed_shutdown', true) \n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "56f027babdc788c7",
+        "type": "ui_svg_graphics",
+        "z": "e6fb18970dbe710a",
+        "group": "fbd9bb2f6bf2ab21",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "svgString": "<svg xmlns:inkscape=\"http://www.inkscape.org/namespaces/inkscape\" xmlns:sodipodi=\"http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns=\"http://www.w3.org/2000/svg\" width=\"239mm\" height=\"172mm\" viewBox=\"0 0 239 172\" version=\"1.1\" id=\"svg5\" xml:space=\"preserve\" inkscape:version=\"1.2.2 (732a01da63, 2022-12-09)\" sodipodi:docname=\"Node-RED HMI Design (Plain SVG).svg\" inkscape:export-filename=\"Node-RED HMI Design (Plain SVG).svg\" inkscape:export-xdpi=\"96\" inkscape:export-ydpi=\"96\" preserveAspectRatio=\"xMidYMid meet\"><rect id=\"svgEditorBackground\" x=\"0\" y=\"0\" width=\"239\" height=\"172\" style=\"fill:none;stroke:none\"/><sodipodi:namedview id=\"namedview7\" pagecolor=\"#505050\" bordercolor=\"#ffffff\" borderopacity=\"1\" inkscape:showpageshadow=\"0\" inkscape:pageopacity=\"0\" inkscape:pagecheckerboard=\"1\" inkscape:deskcolor=\"#505050\" inkscape:document-units=\"mm\" showgrid=\"false\" inkscape:zoom=\"1.0129245\" inkscape:cx=\"523.73104\" inkscape:cy=\"322.33399\" inkscape:window-width=\"1920\" inkscape:window-height=\"991\" inkscape:window-x=\"-9\" inkscape:window-y=\"-9\" inkscape:window-maximized=\"1\" inkscape:current-layer=\"layer1\"/><defs id=\"defs2\"><rect x=\"250.61229\" y=\"357.41919\" width=\"32.809967\" height=\"39.79081\" id=\"rect907\"/></defs><g inkscape:label=\"Layer 1\" inkscape:groupmode=\"layer\" id=\"layer1\"><image width=\"41.064552\" height=\"138.74751\" preserveAspectRatio=\"none\" xlink:href=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGkAAADICAYAAADrws9xAAAAAXNSR0IArs4c6QAAAARnQU1BAACx jwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJzSURBVHhe7dwxSmRBFEDRCsVQUBCjxqQDMTQT DARDt+BOXIpLcSETGIqMMzbN5H+gVlEXTnCg8ku9Sh41xsnJYTw+/mJRZ2ffY9zcfI5t21jU8/On SKsTKUCkAJECRAoQKUCkAJECRAoQKUCkAJECRAoQKUCkAJECRAoQKUCkAJECRAoQKWBGur7+Pd7f NxZ1f/89xm73Z7y9bSzq7u6vcbc6b1KASAEiBYgUIFKASAEiBYgUIFKASAEiBYgUIFKASAEiBYgU IFKASAEiBYgUIFKASAEzkr27tc29Oxusa5sbrMbd2rxJASIFiBQgUoBIASIFiBQgUoBIASIFiBQg UoBIASIFiBQgUoBIASIFiBQgUoBIASIFzEiXl4fx8rKxqP3+6CatzrgLEClApACRAkQKEClApACR AkQKEClApACRAkQKEClApACRAkQKEClApACRAkQKEClApIAZ6erqZ7y+bizq9vYwxn7/NT4+Nhb1 9PRl3K3OmxQgUoBIASIFiBQgUoBIASIFiBQgUoBIASIFiBQgUoBIASIFiBQgUoBIASIFiBQgUsCM 5OfItfk5MsC4CxApQKQAkQJEChApQKQAkQJEChApQKQAkQJEChApQKQAkQJEChApQKQAkQJEChAp QKSAGcly5NosRwYYdwEiBYgUIFKASAEiBYgUIFKASAEiBYgUIFKASAEiBYgUIFKASAEiBYgUIFKA SAEiBYgUMCNdXBzHw8PGona7f27S6oy7AJECRAoQKUCkAJECRAoQKUCkAJECRAoQKUCkAJECRAoQ KUCkAJECRAoQKUCkAJECRAqYkU5Pj/PAms7Pf/4DhKDRdlsWAX4AAAAASUVORK5CYII= \" id=\"image17\" x=\"134.49753\" y=\"28.299393\"/><image width=\"65.711388\" height=\"20.982046\" preserveAspectRatio=\"none\" xlink:href=\"data:image/png;base64,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 \" id=\"image187\" x=\"69.296638\" y=\"58.73074\"/><image width=\"53.833481\" height=\"25.677761\" preserveAspectRatio=\"none\" xlink:href=\"data:image/png;base64,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 jMJu7qCQAAAAAElFTkSuQmCC \" id=\"image211\" x=\"80.754662\" y=\"20.473198\"/><rect style=\"fill:#4d4d4d;stroke-width:0.239476\" id=\"rect501\" width=\"59.424561\" height=\"76.36911\" x=\"5.25067\" y=\"34.258743\" ry=\"5.223989\" rx=\"4.617537\"/><rect style=\"fill:#4d4d4d;stroke-width:0.192685\" id=\"rect501-28\" width=\"55.36113\" height=\"53.070473\" x=\"179.06566\" y=\"114.14543\" ry=\"4.1526713\" rx=\"4.3017912\"/><rect style=\"fill:#4d4d4d;stroke-width:0.183388\" id=\"rect501-2\" width=\"59.424561\" height=\"44.785149\" x=\"5.3418946\" y=\"114.35872\" ry=\"4.7098899\" rx=\"4.709888\"/><rect style=\"fill:#999999;stroke-width:0.186268\" id=\"ps_trigger\" width=\"12.929105\" height=\"12.559701\" x=\"122.12799\" y=\"83.451126\"/><rect style=\"fill:#999999;stroke-width:0.186268\" id=\"ps_get_result\" width=\"12.929105\" height=\"12.559701\" x=\"122.04947\" y=\"105.77811\"/><rect style=\"fill:#999999;stroke-width:0.112314\" id=\"motor_conveyor\" width=\"9.010994\" height=\"6.5519319\" x=\"125.70638\" y=\"29.244352\"/><rect style=\"fill:#999999;stroke-width:0.186268\" id=\"ps_detect\" width=\"12.929105\" height=\"12.559701\" x=\"122.15292\" y=\"145.88025\"/><circle style=\"fill:#999999;stroke-width:0.264583\" id=\"run\" cx=\"21.127306\" cy=\"56.810886\" r=\"9.419776\"/><circle style=\"fill:#999999;stroke-width:0.264583\" id=\"stop\" cx=\"49.505711\" cy=\"56.495586\" r=\"9.419776\"/><ellipse style=\"fill:#999999;stroke-width:0.121502\" id=\"retract\" cx=\"92.736633\" cy=\"66.470474\" rx=\"4.3915343\" ry=\"4.260931\"/><ellipse style=\"fill:#999999;stroke-width:0.121502\" id=\"advance\" cx=\"111.47984\" cy=\"66.544861\" rx=\"4.3915343\" ry=\"4.260931\"/><circle style=\"fill:#999999;stroke-width:0.264583\" id=\"reset\" cx=\"20.94261\" cy=\"86.248543\" r=\"9.419776\"/><circle style=\"fill:#999999;stroke-width:0.264583\" id=\"emergency_switch\" cx=\"49.330296\" cy=\"86.327614\" r=\"9.419776\"/><circle style=\"fill:#999999;stroke-width:0.264583\" id=\"auto\" cx=\"20.647459\" cy=\"136.37448\" r=\"9.419776\"/><circle style=\"fill:#999999;stroke-width:0.264583\" id=\"manual\" cx=\"49.276188\" cy=\"136.2646\" r=\"9.419776\"/><text xml:space=\"preserve\" style=\"font-size:4.23333px;fill:#ffffff;stroke-width:0.264583\" x=\"16.950243\" y=\"70.357468\" id=\"text707\"><tspan sodipodi:role=\"line\" id=\"tspan705\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#ffffff;stroke-width:0.264583\" x=\"16.950243\" y=\"70.357468\">Run</tspan></text><text xml:space=\"preserve\" style=\"font-size:4.23333px;fill:#ffffff;stroke-width:0.264583\" x=\"44.947514\" y=\"70.654572\" id=\"text707-5\"><tspan sodipodi:role=\"line\" id=\"tspan705-8\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#ffffff;stroke-width:0.264583\" x=\"44.947514\" y=\"70.654572\">Stop</tspan></text><text xml:space=\"preserve\" style=\"font-size:4.23333px;fill:#ffffff;stroke-width:0.264583\" x=\"15.371276\" y=\"100.42319\" id=\"text707-7\"><tspan sodipodi:role=\"line\" id=\"tspan705-1\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#ffffff;stroke-width:0.264583\" x=\"15.371276\" y=\"100.42319\">Reset</tspan></text><text xml:space=\"preserve\" style=\"font-size:4.23333px;fill:#ffffff;stroke-width:0.264583\" x=\"49.72636\" y=\"100.57622\" id=\"text707-51\"><tspan sodipodi:role=\"line\" id=\"tspan705-3\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.264583\" x=\"49.72636\" y=\"100.57622\">Emergency</tspan><tspan sodipodi:role=\"line\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.264583\" x=\"49.72636\" y=\"105.93556\" id=\"tspan447\">Switch</tspan></text><text xml:space=\"preserve\" transform=\"scale(0.26458333)\" id=\"text905\" style=\"white-space:pre;shape-inside:url(#rect907);display:inline;fill:#ffffff\"/><rect style=\"fill:#4d4d4d;stroke-width:0.168875\" id=\"rect501-28-7\" width=\"55.54583\" height=\"40.629375\" x=\"178.8019\" y=\"28.590359\" ry=\"3.8893595\" rx=\"4.3161435\"/><text xml:space=\"preserve\" style=\"font-size:4.93889px;fill:#ffffff;stroke-width:0.264583\" x=\"28.479921\" y=\"123.20234\" id=\"text707-6\"><tspan sodipodi:role=\"line\" id=\"tspan705-7\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#ffffff;stroke-width:0.264583\" x=\"28.479921\" y=\"123.20234\">Mode</tspan></text><text xml:space=\"preserve\" style=\"font-size:4.93889px;fill:#ffffff;stroke-width:0.264583\" x=\"26.422052\" y=\"43.229752\" id=\"text707-6-4\"><tspan sodipodi:role=\"line\" id=\"tspan705-7-8\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#ffffff;stroke-width:0.264583\" x=\"26.422052\" y=\"43.229752\">System</tspan></text><text xml:space=\"preserve\" style=\"font-size:4.23333px;fill:#ffffff;stroke-width:0.264583\" x=\"78.629028\" y=\"153.93628\" id=\"text707-6-0\"><tspan sodipodi:role=\"line\" id=\"tspan705-7-3\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#ffffff;stroke-width:0.264583\" x=\"78.629028\" y=\"153.93628\">Photosensor Detect</tspan></text><rect style=\"fill:#4d4d4d;stroke-width:0.168875\" id=\"rect501-28-7-7\" width=\"55.54583\" height=\"40.629375\" x=\"178.89601\" y=\"71.330544\" ry=\"3.595505\" rx=\"4.3161435\"/><rect style=\"fill:#4d4d4d;stroke-width:0.0858919\" id=\"rect501-28-7-7-7\" width=\"56.469337\" height=\"10.338331\" x=\"75.29464\" y=\"8.736887\" ry=\"2.20913\" rx=\"2.3309011\"/><text xml:space=\"preserve\" style=\"font-size:4.23333px;fill:#ffffff;stroke-width:0.264583\" x=\"92.671288\" y=\"131.61159\" id=\"text707-6-0-5-3\"><tspan sodipodi:role=\"line\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.264583\" x=\"92.671288\" y=\"131.61159\" id=\"tspan382-5\">Vision</tspan><tspan sodipodi:role=\"line\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.264583\" x=\"92.671288\" y=\"136.97093\" id=\"tspan418\">Sensor</tspan></text><text xml:space=\"preserve\" style=\"font-size:4.23333px;fill:#ffffff;stroke-width:0.264583\" x=\"78.292778\" y=\"91.074402\" id=\"text707-6-0-6\"><tspan sodipodi:role=\"line\" id=\"tspan705-7-3-8\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#ffffff;stroke-width:0.264583\" x=\"78.292778\" y=\"91.074402\">Photosensor Trigger</tspan></text><text xml:space=\"preserve\" style=\"font-size:4.23333px;fill:#ffffff;stroke-width:0.264583\" x=\"70.702133\" y=\"113.38887\" id=\"text707-6-0-6-0\"><tspan sodipodi:role=\"line\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#ffffff;stroke-width:0.264583\" x=\"70.702133\" y=\"113.38887\" id=\"tspan549\">Photosensor Get Result</tspan></text><text xml:space=\"preserve\" style=\"font-size:4.23333px;fill:#ffffff;stroke-width:0.264583\" x=\"82.925598\" y=\"56.941349\" id=\"text707-6-0-6-8\"><tspan sodipodi:role=\"line\" id=\"tspan705-7-3-8-3\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#ffffff;stroke-width:0.264583\" x=\"82.925598\" y=\"56.941349\">Pneumatic Pusher</tspan></text><text xml:space=\"preserve\" style=\"font-size:4.23333px;fill:#ffffff;stroke-width:0.264583\" x=\"85.749969\" y=\"75.60955\" id=\"text707-6-0-6-8-9\"><tspan sodipodi:role=\"line\" id=\"tspan705-7-3-8-3-6\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#ffffff;stroke-width:0.264583\" x=\"85.749969\" y=\"75.60955\">Retract</tspan></text><text xml:space=\"preserve\" style=\"font-size:4.23333px;fill:#ffffff;stroke-width:0.264583\" x=\"102.8643\" y=\"75.666763\" id=\"text707-6-0-6-8-9-4\"><tspan sodipodi:role=\"line\" id=\"tspan705-7-3-8-3-6-3\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#ffffff;stroke-width:0.264583\" x=\"102.8643\" y=\"75.666763\">Advance</tspan></text><text xml:space=\"preserve\" style=\"font-size:4.23333px;fill:#ffffff;stroke-width:0.264583\" x=\"42.307598\" y=\"151.43675\" id=\"text707-0\"><tspan sodipodi:role=\"line\" id=\"tspan705-4\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#ffffff;stroke-width:0.264583\" x=\"42.307598\" y=\"151.43675\">Manual</tspan></text><text xml:space=\"preserve\" style=\"font-size:4.23333px;fill:#ffffff;stroke-width:0.264583\" x=\"16.264685\" y=\"151.43675\" id=\"text707-9\"><tspan sodipodi:role=\"line\" id=\"tspan705-36\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#ffffff;stroke-width:0.264583\" x=\"16.264685\" y=\"151.43675\">Auto</tspan></text><text xml:space=\"preserve\" style=\"font-size:4.23333px;fill:#ffffff;stroke-width:0.264583\" x=\"183.24884\" y=\"131.57634\" id=\"text707-6-0-6-82\"><tspan sodipodi:role=\"line\" id=\"tspan705-7-3-8-6\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#ffffff;stroke-width:0.264583\" x=\"183.24884\" y=\"131.57634\">Queue Status Product : </tspan></text><text xml:space=\"preserve\" style=\"font-size:4.23333px;fill:#ffffff;stroke-width:0.264583\" x=\"87.268753\" y=\"6.702549\" id=\"text707-6-0-6-1\"><tspan sodipodi:role=\"line\" id=\"tspan705-7-3-8-30\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#ffffff;stroke-width:0.264583\" x=\"87.268753\" y=\"6.702549\">Motor Conveyor</tspan></text><text xml:space=\"preserve\" style=\"font-size:4.23333px;fill:#ffffff;stroke-width:0.264583\" x=\"139.84399\" y=\"26.792534\" id=\"text707-6-0-6-4\"><tspan sodipodi:role=\"line\" id=\"tspan705-7-3-8-7\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#ffffff;stroke-width:0.264583\" x=\"139.84399\" y=\"26.792534\">Conveyor Belt</tspan></text><text xml:space=\"preserve\" style=\"font-size:4.23333px;fill:#ffffff;stroke-width:0.264583\" x=\"183.28912\" y=\"121.83479\" id=\"text1148\"><tspan sodipodi:role=\"line\" id=\"tspan1146\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial Bold';stroke-width:0.264583\" x=\"183.28912\" y=\"121.83479\">Target Sorting : </tspan></text><text xml:space=\"preserve\" style=\"font-size:3.175px;fill:#ffffff;stroke-width:0.264583\" x=\"237.15671\" y=\"110.63618\" id=\"text1169\"><tspan sodipodi:role=\"line\" id=\"tspan1167\" style=\"stroke-width:0.264583\" x=\"237.15671\" y=\"110.63618\"/></text><text xml:space=\"preserve\" style=\"font-size:4.23333px;fill:#ffffff;stroke-width:0.264583\" x=\"183.49876\" y=\"141.22838\" id=\"text1173\"><tspan sodipodi:role=\"line\" id=\"tspan1171\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial Bold';stroke-width:0.264583\" x=\"183.49876\" y=\"141.22838\">1.</tspan></text><text xml:space=\"preserve\" style=\"font-size:4.23333px;fill:#ffffff;stroke-width:0.264583\" x=\"190.71648\" y=\"141.32318\" id=\"text1173-0\"><tspan sodipodi:role=\"line\" id=\"buffer3\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial Bold';stroke-width:0.264583\" x=\"190.71648\" y=\"141.32318\">Good</tspan></text><text xml:space=\"preserve\" style=\"font-size:4.23333px;fill:#ffffff;stroke-width:0.264583\" x=\"217.5\" y=\"122.057\" id=\"text1173-0-36\"><tspan sodipodi:role=\"line\" id=\"target_sorting\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial Bold';stroke-width:0.264583\" x=\"217.501\" y=\"122.057\">5</tspan></text><text xml:space=\"preserve\" style=\"font-size:4.23333px;fill:#ffffff;stroke-width:0.264583\" x=\"199.97137\" y=\"64.722107\" id=\"text1173-0-36-0\"><tspan sodipodi:role=\"line\" id=\"current_sorting\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial Bold';stroke-width:0.264583\" x=\"199.97137\" y=\"64.722107\">5</tspan></text><text xml:space=\"preserve\" style=\"font-size:4.23333px;fill:#ffffff;stroke-width:0.264583\" x=\"112.89453\" y=\"15.559393\" id=\"text1173-0-36-0-4-1\"><tspan sodipodi:role=\"line\" id=\"output_velocity\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial Bold';stroke-width:0.264583\" x=\"112.89453\" y=\"15.559393\">5</tspan></text><text xml:space=\"preserve\" style=\"font-size:4.23333px;fill:#ffffff;stroke-width:0.264583\" x=\"199.87903\" y=\"47.435814\" id=\"text1173-0-36-0-0\"><tspan sodipodi:role=\"line\" id=\"current_good_product\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial Bold';stroke-width:0.264583\" x=\"199.87903\" y=\"47.435814\">5</tspan></text><text xml:space=\"preserve\" style=\"font-size:4.23333px;fill:#ffffff;stroke-width:0.264583\" x=\"200.06374\" y=\"55.839718\" id=\"text1173-0-36-0-1\"><tspan sodipodi:role=\"line\" id=\"current_reject_product\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial Bold';stroke-width:0.264583\" x=\"200.06374\" y=\"55.839718\">5</tspan></text><text xml:space=\"preserve\" style=\"font-size:4.23333px;fill:#ffffff;stroke-width:0.264583\" x=\"190.74901\" y=\"151.23985\" id=\"text1173-0-3\"><tspan sodipodi:role=\"line\" id=\"buffer2\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial Bold';stroke-width:0.264583\" x=\"190.74901\" y=\"151.23985\">Reject</tspan></text><text xml:space=\"preserve\" style=\"font-size:4.23333px;fill:#ffffff;stroke-width:0.264583\" x=\"190.93372\" y=\"161.14632\" id=\"text1173-0-6\"><tspan sodipodi:role=\"line\" id=\"buffer1\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial Bold';stroke-width:0.264583\" x=\"190.93372\" y=\"161.14632\">-</tspan></text><text xml:space=\"preserve\" style=\"font-size:4.23333px;fill:#ffffff;stroke-width:0.264583\" x=\"183.65854\" y=\"151.2771\" id=\"text1177\"><tspan sodipodi:role=\"line\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial Bold';stroke-width:0.264583\" x=\"183.65854\" y=\"151.2771\" id=\"tspan1179\">2.</tspan></text><text xml:space=\"preserve\" style=\"font-size:4.23333px;fill:#ffffff;stroke-width:0.264583\" x=\"183.65854\" y=\"161.51053\" id=\"text1185\"><tspan sodipodi:role=\"line\" id=\"tspan1183\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial Bold';stroke-width:0.264583\" x=\"183.65854\" y=\"161.51053\">3.</tspan></text><text xml:space=\"preserve\" style=\"font-size:4.93889px;fill:#ffffff;stroke-width:0.264583\" x=\"181.73244\" y=\"36.095028\" id=\"text1148-8\"><tspan sodipodi:role=\"line\" id=\"tspan1146-5\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;font-family:Arial;-inkscape-font-specification:'Arial Bold';stroke-width:0.264583\" x=\"181.73244\" y=\"36.095028\">Current Shift Sorting</tspan></text><text xml:space=\"preserve\" style=\"font-size:4.23333px;fill:#ffffff;stroke-width:0.264583\" x=\"182.24628\" y=\"64.432289\" id=\"text707-6-0-6-82-4\"><tspan sodipodi:role=\"line\" id=\"tspan705-7-3-8-6-9\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#ffffff;stroke-width:0.264583\" x=\"182.24628\" y=\"64.432289\">Total </tspan></text><text xml:space=\"preserve\" style=\"font-size:4.23333px;fill:#ffffff;stroke-width:0.264583\" x=\"182.1942\" y=\"47.285873\" id=\"text1173-9\"><tspan sodipodi:role=\"line\" id=\"tspan1171-2\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial Bold';stroke-width:0.264583\" x=\"182.1942\" y=\"47.285873\">Good </tspan></text><text xml:space=\"preserve\" style=\"font-size:4.23333px;fill:#ffffff;stroke-width:0.264583\" x=\"182.28656\" y=\"55.597454\" id=\"text1177-1\"><tspan sodipodi:role=\"line\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial Bold';stroke-width:0.264583\" x=\"182.28656\" y=\"55.597454\" id=\"tspan1179-3\">Reject </tspan></text><text xml:space=\"preserve\" style=\"font-size:4.23333px;fill:#ffffff;stroke-width:0.264583\" x=\"200.49025\" y=\"106.70088\" id=\"text1173-0-36-0-03\"><tspan sodipodi:role=\"line\" id=\"total_sorting\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial Bold';stroke-width:0.264583\" x=\"200.49025\" y=\"106.70088\">5</tspan></text><text xml:space=\"preserve\" style=\"font-size:4.23333px;fill:#ffffff;stroke-width:0.264583\" x=\"200.3979\" y=\"89.414589\" id=\"text1173-0-36-0-0-7\"><tspan sodipodi:role=\"line\" id=\"total_good_product\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial Bold';stroke-width:0.264583\" x=\"200.3979\" y=\"89.414589\">5</tspan></text><text xml:space=\"preserve\" style=\"font-size:4.23333px;fill:#ffffff;stroke-width:0.264583\" x=\"200.58261\" y=\"97.818489\" id=\"text1173-0-36-0-1-5\"><tspan sodipodi:role=\"line\" id=\"total_reject_product\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial Bold';stroke-width:0.264583\" x=\"200.58261\" y=\"97.818489\">5</tspan></text><text xml:space=\"preserve\" style=\"font-size:4.23333px;fill:#ffffff;stroke-width:0.264583\" x=\"182.76515\" y=\"106.41107\" id=\"text707-6-0-6-82-4-7\"><tspan sodipodi:role=\"line\" id=\"tspan705-7-3-8-6-9-6\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#ffffff;stroke-width:0.264583\" x=\"182.76515\" y=\"106.41107\">Total </tspan></text><text xml:space=\"preserve\" style=\"font-size:4.23333px;fill:#ffffff;stroke-width:0.264583\" x=\"182.71307\" y=\"89.264648\" id=\"text1173-9-8\"><tspan sodipodi:role=\"line\" id=\"tspan1171-2-7\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial Bold';stroke-width:0.264583\" x=\"182.71307\" y=\"89.264648\">Good </tspan></text><text xml:space=\"preserve\" style=\"font-size:4.23333px;fill:#ffffff;stroke-width:0.264583\" x=\"182.80544\" y=\"97.576225\" id=\"text1177-1-1\"><tspan sodipodi:role=\"line\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial Bold';stroke-width:0.264583\" x=\"182.80544\" y=\"97.576225\" id=\"tspan1179-3-7\">Reject </tspan></text><text xml:space=\"preserve\" style=\"font-size:4.93889px;fill:#ffffff;stroke-width:0.264583\" x=\"191.88058\" y=\"78.835205\" id=\"text1148-8-8\"><tspan sodipodi:role=\"line\" id=\"tspan1146-5-1\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;font-family:Arial;-inkscape-font-specification:'Arial Bold';stroke-width:0.264583\" x=\"191.88058\" y=\"78.835205\">Total Sorting</tspan></text><text xml:space=\"preserve\" style=\"font-size:4.23333px;fill:#ffffff;stroke-width:0.264583\" x=\"77.792374\" y=\"15.211695\" id=\"text707-6-0-6-82-4-2-4\"><tspan sodipodi:role=\"line\" id=\"tspan705-7-3-8-6-9-5-1\" style=\"font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#ffffff;stroke-width:0.264583\" x=\"77.792374\" y=\"15.211695\">Output Velocity :</tspan></text><text xml:space=\"preserve\" style=\"font-size:4.23333px;fill:#ffffff;stroke-width:0.264583\" x=\"221.27238\" y=\"108.95442\" id=\"text1185-8\"><tspan sodipodi:role=\"line\" id=\"tspan1183-3\" style=\"font-size:4.23333px;stroke-width:0.264583\" x=\"221.27238\" y=\"108.95442\"/></text><image width=\"31.461706\" height=\"10.785971\" preserveAspectRatio=\"none\" xlink:href=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAABDCAYAAADH5no2AAAAAXNSR0IArs4c6QAAAARnQU1BAACx jwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAtSSURBVHhe7d3bUxNZHgfw/Bn7uH/IPi4yujM7 OzsXZmQdRBwZjYqAEHJPIAGSQBIIhIRwE+SiIKBEAQU5eFARdZyLjnPdmdmXrXmcfeiHffltjtXZ 2mF/Peekj5e2PL+qT5UP1Jcqur9ymj7ptv3W2O12XyqVeqxYT3Nz88/19fX/Nqu6uvoX/TCrKXUO Hz48du/ePVCsJ5PJQDabNc3hcKhimB1VDOtSxXiBo4phXc+6GHv27HmtrOy1DbPKy8oP6lFSU162 N4Hli9q3b9/v9KjSxudvBSMul+ef2EFRXrxnXYx95W8c3Lf3dTCroqKStDg9IOu9d99H80U1NDaj uTy2WFcCjIRC7aoYFiVdjBan1uJ0/2Ckuvrw8p/feBPMqqysIh5vAGTt/6ASzRfV7HChuTy27OAw GEkke1UxLEq2GE6XW3N7/GCktvZj+te33gGzqqpqSCAYAlkfHjiI5otyuX1oLo9t5twsGMkNDati WJRsMdxur4adEEX243WULWPMqqmpJaFwJ8g6VH0YzRfFLgmwXB7b5SsrYGRqekYVw6Jki+H1+jTs hCg6VXeKsmWMWbW1dtIZ6QJZRz6qRfNFtbaF0VweG926BUYuXrqiimFRssXw+fwadkIUNZ5uomwZ Y5bdXke6upMg69jR42i+qPaOKJrLY/v8i4dghJBNVQyLki2G3x/QsBOiqKXJSdkyxqy6ukaS7OkD WSdPnELzRUVjcTSXx/bDjz+BkZ2791QxLEq2GIFgq9bT2wdGPB4v/aiwjDGrsdFB+vozIKu+vhHN FxVP9KK5PLbHX30NRujWliqGRckWo7W1TetPZ8CINxCkRwvLGLMcDjfJZHMgq6mpBc0X1ZtKo7k8 tjs7d8HIyuqqKoZFyRajLRTWsoNDYCQUCtMTJ+rALLfbT4aGx0CW0+lG80WlBwbRXB7btbXrYGTu woIqhkXJFiMcbteGR8bASDgSpfUNp8Esv7+NjJ2ZAFleXwDNFzWYG0FzeWzzCxfByPj4WVUMi5It RntHp3ZmfBKMRKNxypYxZrW1dZCzk9MgKxgMofmiRkbPoLk8NqwtRemBjCqGRckWo7Mzok1OnQMj 8XgvZcsYszo6YgS7aVyqcLgDzRc1PjGJ5vLY2MWJkVgsrophUbLFiEZj2vnZC2Cktz9Nvd4AmBWL JUhhKc6W41IikS40X9TU9Dk0l8cWbo+AkUCwTRXDomSLEYvHNWz5XJRO5yhbxpiVSKTI4sUlkNXd nUTzRZ2fnUdzeWwtTs+Gkfr6pkfYQVFePNliJBJJ7dLSZTCSy41QbKuIqFRqgOQvL4MsdrMNyxfF So7l8ui77/FRH1SyLtliJHt6tCvLq2BkdHSCYltFRA0M5MjK6jWQxW62YfmiLi1dQXN59Argo4ph XbLF6O1NaVevrYORiYlpim0VEZXLjZK19Q2QlckOofmiWMmxXB69AvioYliXbDH6+vq1DXIDjExP z9Ld+4dKUfiNQ8gmBVnsZhuWL+rqtetoLo9eAXxUMaxLthj9/WntBr0JRmbnFuju/UOlKPzGIVs3 b4OssTNn0XxR1zc20VwevQL4qGJYl2wxBgYy2u3tHTCysJinbBljVuE3Dtm+cxdknZ2cQfNF3aC3 0FwevQL4qGJYl2wxMtmsdvfefTCSzy/ToZExMGt2bo7cu/8JyJo5P4fmi7p1exvN5dErgI8qhnXJ FmNwcFB78OlnYGR5ZY2yZYxZC4uL5NPPPgdZcxcW0XxRO3fvo7k8egXwUcWwLtli5HI57YuHj8DI 6vo6nSgsY8xayufJw0dfgqyFi3k0X9T9B5+iuTx6BfBRxbAu2WIMDQ1rX339DRghm1t05twcmLW8 skKw3FLlL6+g+aI+/+IRmsujVwAfVQzrki3G8MiI9u1334ORzZs36WxhGWPWtbU18t33fwdZy6tr aL6oR4+/QnN59Argo4phXbLFGB0d03786R9gZPvODmXLGLM2CCFYbqmurRM0X9Q3336P5vLoFcBH FcO6VDHEqGK8YmSLMVJYSmFLiKKtm9tqKWU0qhjW9TwuvqcLF69mPa2L76XCxTeWL0pdfL9iZIvB /lyL/ZmyaH2dUHbX2ayl/DJ59OVjkLV4KY/mi2L3ZLBcHr0C+KhiWJdsMQYHcxp2Y6toZXWNjo1P glkLi0tP5wbf/EU0X5S6wfeKkS1GgYZthSh6siVk1yNlSjE7t0Duf/IAZD3ZEoLki7q9fQfN5dEr gI8qhnXJFoNtIty+s8P++oRaXMrTzOAQmPXUNhFOzaD5otQmwleMbDH602kNe5B30dzcAu1Ps68z h207v3nrNsg6MzGJ5ovaIJtoLo9eAXxUMaxLthjP44NKmzcoyGI7ZLF8UezBgVguj14BfFQxrEu2 GL2plLb7yZP/a2JqmnbHk2AW+2jr+vUNkJXNDaH5opZXVtFcHr0C+KhiWJdsMXp6erXllauFEwc3 Oj5BI9EuMIs9DGH16hrI6h/IoPmilvJX0FwevQL4qGLwra2tgc8Xg6Gh/DPT0zNVWPMv/ur7yhYj kUxq7KQxUvgfn2LPGhPFHp+DvaWrVD2pfjRf1MLiJTSXR68APqoYfKwYw8MrhX/DM7O29vNTL0Y8 ntDYSWMkPZijwdYwmMUeuHbxUh5kdSd60HxRs3PzaC6PXgF8VDH4XtZiRGMxjZ00RvrZIzp9gSdP GzeDPaLzwvwiyIrEutB8UdMz59FcHr0C+Khi8L2sxeiMRDT2XFcjhWsQ6nJ5wSz2UOdz5+dAVntH BM0XNXF2Cs3l0SuAjyoG38tajI7OTo2dNEa6u+O0udkJZrHXAExOzYAs9tZVLF/U6Ng4msujVwAf VQy+l7UY4fYObWR0HIxEIlHa0NAEZrEXx2Dv3SiVzx9E80XlhkbRXB69AvioYvARQiAQiEBXV/aZ 6ezsg3z+yq++r2wxQqGwxt42ZCQUbqcn6+rBLLfPT4ZHzoAsl9uL5osayOTQXB69AvioYliXbDFa 20Iaez+dkWAwRI8dOwFmsZdTZgeHQVazw4nmi0r1DaC5PHoF8FHFsC7ZYgSDrRr2sqAijydAjxw5 CmY1NjtIeiBbKJmcxsYmNF9UsieF5vLoFcBHFcO6ZIvhDwQ19g5sIy0tHlpT8xGY1dDQSHp6+0EW Ww5h+aJiXQk0l0evAD6qGNYlXQy/X4vG4mDk9OkmWlVVDWadrKsjWOFKZbefRPNFsXdkYLk8egXw UcWwLtlieH1+rb0jCkZOnTpNKysPgFnHjtlJJNoNso7UHkXzRbWFOtBcHr0C+KhiWJdsMTwer9ba 1l64CMcdP15HKyo+ALOO1NYSrHClqqk5guaLCgRDaC6PXgF8VDGsS7YYLrdbY/cIjHz88XH6ztvv glmHamoIVrhSHaw6hOaLYm9uxXJ59Argo4phXbLFcDpdmsvtKxQEV3O4lv7lzbfArA+rqojP31oo mZy/VX6I5otqcXrQXB69AvioYliXbDEcLU6t2eECI4eqaujrf3oDzNpfWUmwwpXq/Yr9aL6opqYW NJdHrwA+u4uxtbX1ZAuE8mLs7Ow8vWI4HL/ohxmd8vLyg6+V7wWzKir2E0eLu1BAOe+8/R6aL6q+ oQnN5dF/DPjsLkY4HAaXy6W8AHa7/Uk5nlcxysrKDpb9cQ+YVV62t7PwPX4va8+evbexfFEHDhz4 A5bLo/8Y8NldjFAoBF1dXcoLwMrxPIuh5jdGFcM6VDEsNKoY1oEVI5lMmtbQ0PAv/TCrKXVUMaxj dzE2NjZgenraNK/X+1A/zGpKHVUM69hdDFnxeJzqh1lNqaOKYR2qGBYaVgx2MIp8Pt+TcijPX+Ga AObn5/97LGSFw+E7+mFW839js/0HkLN0Qg4neh4AAAAASUVORK5CYII= \" id=\"image249\" x=\"102.33485\" y=\"127.04356\"/></g></svg>",
+        "clickableShapes": [],
+        "javascriptHandlers": [],
+        "smilAnimations": [],
+        "bindings": [],
+        "showCoordinates": false,
+        "autoFormatAfterEdit": false,
+        "showBrowserErrors": false,
+        "showBrowserEvents": false,
+        "enableJsDebugging": false,
+        "sendMsgWhenLoaded": false,
+        "noClickWhenDblClick": false,
+        "outputField": "payload",
+        "editorUrl": "//drawsvg.org/drawsvg.html",
+        "directory": "",
+        "panning": "disabled",
+        "zooming": "disabled",
+        "panOnlyWhenZoomed": false,
+        "doubleClickZoomEnabled": false,
+        "mouseWheelZoomEnabled": false,
+        "dblClickZoomPercentage": 150,
+        "cssString": "div.ui-svg svg{\n    color: var(--nr-dashboard-widgetColor);\n    fill: currentColor !important;\n}\ndiv.ui-svg path {\n    fill: inherit;\n}",
+        "name": "",
+        "x": 460,
+        "y": 1200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "913b47159edf28bb",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Upload to Database (Good)",
+        "func": "var date_now = new Date()\nvar date = date_now.toDateString()\nvar time = date_now.toTimeString()\ntime = time.slice(0, -25)\ntime = time.replace('GMT','')\n\nvar data = msg.payload\nvar sorting_result_true = global.get('sorting_result_true')\n\nif(data == 'true'){\n    msg.payload = '';\n    msg.params = [sorting_result_true, date, time]\n    node.send(msg)\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 2000,
+        "wires": [
+            [
+                "1f98a1155306acf0"
+            ]
+        ]
+    },
+    {
+        "id": "6d50b572c089dcb2",
+        "type": "function",
+        "z": "e6fb18970dbe710a",
+        "name": "Upload to Database (Reject)",
+        "func": "var date_now = new Date()\nvar date = date_now.toDateString()\nvar time = date_now.toTimeString()\ntime = time.slice(0, -25)\ntime = time.replace('GMT','')\n\nvar data = msg.payload\nvar sorting_result_false = global.get('sorting_result_false')\n\nif(data == 'false'){\n    msg.payload = '';\n    msg.params = [sorting_result_false, date, time]\n    node.send(msg)\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 2040,
+        "wires": [
+            [
+                "1f98a1155306acf0"
+            ]
+        ]
+    },
+    {
+        "id": "1f98a1155306acf0",
+        "type": "postgresql",
+        "z": "e6fb18970dbe710a",
+        "name": "Insert Sorting Result",
+        "query": "INSERT INTO sorting_result VALUES (DEFAULT, $1, $2, $3);",
+        "postgreSQLConfig": "5be9579b85d36a31",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 920,
+        "y": 2020,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e81fdae4f2cf9aed",
+        "type": "ui_button",
+        "z": "e6fb18970dbe710a",
+        "name": "",
+        "group": "bbe3904282b647f5",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Refresh",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "date",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 100,
+        "y": 1480,
+        "wires": [
+            [
+                "535440fe27e160a2"
+            ]
+        ]
+    },
+    {
+        "id": "1e178ed8246c228c",
+        "type": "ui_table",
+        "z": "e6fb18970dbe710a",
+        "group": "bbe3904282b647f5",
+        "name": "Sorting Result",
+        "order": 6,
+        "width": "27",
+        "height": "10",
+        "columns": [
+            {
+                "field": "id",
+                "title": "ID",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "class",
+                "title": "Class",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "class_name",
+                "title": "Class Name",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "date",
+                "title": "Date",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "time",
+                "title": "Time",
+                "width": "",
+                "align": "center",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 460,
+        "y": 1480,
+        "wires": []
+    },
+    {
+        "id": "535440fe27e160a2",
+        "type": "postgresql",
+        "z": "e6fb18970dbe710a",
+        "name": "Get Sorting Result",
+        "query": "SELECT sr.id AS id, sr.class AS class, sc.class AS class_name, sr.date AS date, sr.time AS time FROM sorting_result sr JOIN sorting_class sc ON sr.class = sc.id ORDER BY id DESC LIMIT 100;",
+        "postgreSQLConfig": "5be9579b85d36a31",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 270,
+        "y": 1480,
+        "wires": [
+            [
+                "1e178ed8246c228c"
+            ]
+        ]
+    },
+    {
+        "id": "acbd090a23b3cb94",
+        "type": "http request",
+        "z": "e6fb18970dbe710a",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 990,
+        "y": 1580,
+        "wires": [
+            [
+                "adf212192f47bc80"
+            ]
+        ]
+    },
+    {
+        "id": "c3f797663c284bba",
+        "type": "http request",
+        "z": "e6fb18970dbe710a",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 990,
+        "y": 1640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "defd946ea7b93f3b",
+        "type": "s7 out",
+        "z": "e6fb18970dbe710a",
+        "endpoint": "8f68ce2609b0d4ea",
+        "variable": "Target Sorting",
+        "name": "",
+        "x": 1340,
+        "y": 1580,
+        "wires": []
+    },
+    {
+        "id": "cc2948fbdc991047",
+        "type": "inject",
+        "z": "e6fb18970dbe710a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 770,
+        "y": 1640,
+        "wires": [
+            [
+                "c3f797663c284bba"
+            ]
+        ]
+    }
+]
